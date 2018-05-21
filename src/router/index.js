@@ -8,6 +8,7 @@ import CompanyDetail from '@/components/companyDetail/CompanyDetail.vue'
 import Trade from '@/components/Trade/Trade.vue'
 import Regist from '@/components/regist/Regist.vue'
 import Template from '@/components/template/Template.vue'
+import TempDetail from '@/components/tempDetail/TempDetail.vue'
 
 Vue.use(Router)
 
@@ -52,6 +53,12 @@ export default new Router({
             path: '/template',
             name: 'Template',
             component: Template
+        }
+        ,
+        {
+            path: '/TempDetail',
+            name: 'TempDetail',
+            component: TempDetail
         }
 
     ]

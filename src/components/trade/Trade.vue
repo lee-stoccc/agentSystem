@@ -1,10 +1,9 @@
 <template>
     <div>
-
         <div class="logo"><img src="../../assets/imgs/swiper01.jpg" alt=""></div>
         <div>
             <div class="type">
-                <div :class="type==1?'cho':'uncho'" @click="show" id="1" data-s="1">小程序</div>
+                <div :class="type==1?'cho':'uncho'" k id="1" data-s="1">小程序</div>
                 <div class="colline"></div>
                 <div :class="type==2?'cho':'uncho'" @click="show" id="2" data-s="2">广告合作</div>
                 <div class="colline"></div>

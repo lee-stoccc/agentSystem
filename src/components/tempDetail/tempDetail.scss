@@ -1,0 +1,55 @@
+@mixin m($t:0,$r:0,$b:0,$l:0) {
+  margin-top: $t;
+  margin-right: $r;
+  margin-bottom: $b;
+  margin-left: $l;
+}
+
+@mixin p($t:0,$r:0,$b:0,$l:0) {
+  padding-top: $t;
+  padding-right: $r;
+  padding-bottom: $b;
+  padding-left: $l;
+}
+
+.swiper{
+  background-color: #eee;
+  width: 100%;
+  height: 24rem;
+  text-align: center;
+  img{
+    width: 46%;
+    height: 100%;
+  }
+  .name{
+    @include m($t:1rem);
+    font-size: 1.6rem;
+  }
+  .price{
+    color: #e60000;
+    @include m($t:1rem);
+    position: relative;
+    span:nth-child(2){
+      font-size:1.6rem;
+    }
+    img{
+      width: 1.4rem;
+      height: 1.4rem;
+      position: absolute;
+      right: 1rem;
+    }
+  }
+  .blue{
+    text-align: left;
+    background-color: #25aaff;
+    @include m($t:1rem);
+    @include p(0.6rem,0,0.6rem,2rem);
+    font-size: 1.6rem;
+    color: beige;
+  }
+  .detail{
+    text-align: left;
+    @include p($l:2rem,$r:2rem);
+    @include m($t:1rem)
+  }
+}
