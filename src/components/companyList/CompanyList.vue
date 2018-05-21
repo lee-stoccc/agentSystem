@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="c-list">
+        <div class="c-list" @click="go()">
             <div><img src="../../assets/imgs/swiper01.jpg" alt=""></div>
             <div>
                 <div>阿帕奇有限公公司</div>
@@ -28,6 +28,7 @@
                 </div>
             </div>
         </div>
+        <Footer :type="type"></Footer>
     </div>
 </template>
 

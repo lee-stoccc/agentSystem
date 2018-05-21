@@ -70,6 +70,7 @@
                 <div>投诉反馈</div>
             </div>
         </div>
+        <Footer :type="type"></Footer>
     </div>
 </template>
 

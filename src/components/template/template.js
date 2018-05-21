@@ -1,3 +1,17 @@
-/**
- * Created by Administrator on 2018/5/19 0019.
- */
+
+export default {
+    name:'Index',
+    data () {
+        return {
+            msg: 'Welcome to Your Vue.js App',
+            type:1,
+        }
+    },
+    methods:{
+
+    },
+    mounted:function () {
+        console.log(this.$route.params.id)
+
+    }
+}

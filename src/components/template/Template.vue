@@ -1,6 +1,6 @@
 <template>
     <div class="temp">
-        <div>
+        <div @click="go('TempDetail',{id:'12'})">
             <div><img src="../../assets/imgs/i.png" alt=""></div>
             <div>小程序模板</div>
             <div><span>￥</span><span>9.99</span></div>

@@ -8,7 +8,7 @@ export default {
     data () {
         return {
             msg: 'Welcome to Your Vue.js App',
-            type: 1,
+            type: 2,
             area: [
                 {id: 10, name: '花都'},
                 {id: 12, name: '美利坚'},
@@ -16,7 +16,8 @@ export default {
             ],
             aid:'',
             dot:true,
-            aname:''
+            aname:'',
+            src:''
         }
     },
     methods: {
@@ -35,5 +36,8 @@ export default {
             this.type=e.target.dataset.sid
         }
 
+    },
+    mounted:function () {
+            console.log(this)
     }
 }

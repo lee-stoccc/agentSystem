@@ -30,7 +30,7 @@ export default new Router({
             component: Login
         },
         {
-            path: '/companyList',
+            path: '/companyList',     //分公司
             name: 'CompanyList',
             component: CompanyList
         },

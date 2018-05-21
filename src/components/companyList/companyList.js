@@ -6,7 +6,15 @@ export default {
     data () {
         return {
             msg: 'Welcome to Your Vue.js App',
-            type:1
+            type:4
+        }
+    },
+    methods:{
+        go:function () {
+            this.$router.push({
+                name:'CompanyDetail',
+                params:{id:'213'}
+            })
         }
     }
 }

@@ -3,11 +3,13 @@
  */
 export default {
     components:{
-        Mine:'Mine'
+        Mine:'Mine',
+
     },
     data () {
         return {
-            msg: 'Welcome to Your Vue.js App'
+            msg: 'Welcome to Your Vue.js App',
+            type:3
         }
     }
 }

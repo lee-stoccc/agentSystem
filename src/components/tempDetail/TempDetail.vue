@@ -7,6 +7,7 @@
     <div class="detail">一个是由AMD提供处理芯片
       一个是由nVIDIA提供处理芯片
       够简易了吧</div>
+    <Footer></Footer>
   </div>
 
 </template>

@@ -36,7 +36,7 @@
                 <div><img src="../../assets/imgs/2-1.png" alt=""></div>
                 <div>移动支付</div>
             </div>
-            <div>
+            <div @click="go('Template')">
                 <div><img src="../../assets/imgs/2-2.png" alt=""></div>
                 <div>小程序模版</div>
             </div>
@@ -62,6 +62,7 @@
             <div>1</div>
             <div>2</div>
         </div>
+        <Footer :type="type"></Footer>
     </div>
 </template>
 

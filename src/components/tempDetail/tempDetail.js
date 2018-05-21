@@ -10,5 +10,7 @@ export default {
             msg: 'Welcome to Your Vue.js App',
         }
     },
-
+    mounted:function () {
+        console.log(this.$route.params.id)
+    }
 }
