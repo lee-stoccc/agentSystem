@@ -1,0 +1,39 @@
+@mixin m($t:0,$r:0,$b:0,$l:0) {
+  margin-top: $t;
+  margin-right: $r;
+  margin-bottom: $b;
+  margin-left: $l;
+}
+
+@mixin p($t:0,$r:0,$b:0,$l:0) {
+  padding-top: $t;
+  padding-right: $r;
+  padding-bottom: $b;
+  padding-left: $l;
+}
+
+.temp{
+  width: 90%;
+  @include m($l:5%,$t:1.5rem);
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-around;
+  text-align: center;
+  >div{
+    >div{
+      @include m($b:0.5rem,$t:0.5rem)
+    }
+    span:nth-child(1){
+      font-size:0.5rem;
+    }
+    span:nth-child(2){
+      font-size:2rem;
+      color:#e60000 ;
+    }
+    @include m($b:1.5rem);
+    width: 40%;
+    img{
+      width: 100%;
+    }
+  }
+}

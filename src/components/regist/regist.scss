@@ -1,0 +1,142 @@
+@mixin m($t:0,$r:0,$b:0,$l:0) {
+  margin-top: $t;
+  margin-right: $r;
+  margin-bottom: $b;
+  margin-left: $l;
+}
+
+@mixin p($t:0,$r:0,$b:0,$l:0) {
+  padding-top: $t;
+  padding-right: $r;
+  padding-bottom: $b;
+  padding-left: $l;
+}
+
+.login {
+  background-color: #fff;
+  position: fixed;
+  left: 5%;
+  width: 90%;
+  top: 5%;
+  height: 90%;
+
+}
+
+.cho {
+  background-color: #25aaff;
+  color: #fff;
+}
+
+.uncho {
+  background-color: #fff;
+  color: #494949;
+}
+
+.type {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  color: #494949;
+  div {
+    width: 100%;
+    @include p($t: 0.8rem, $b: 0.8rem);
+  }
+}
+
+.ainput {
+  text-align: center;
+  display: flex;
+  border: #eee 1px solid;
+  border-radius: 3px;
+  width: 90%;
+  @include m($l: 5%, $t: 0.5rem, $b: 1.2rem);
+  height: 3rem;
+  text-align: center;
+  line-height: 3rem;
+  div {
+    img {
+      width: 1.4rem;
+      height: 1.4rem;
+      line-height: 3rem;
+      position: relative;
+      top: 0.3rem;
+    }
+  }
+
+  input {
+    border-width: 0;
+    outline: medium;
+    width: 100%;
+    text-align: center;
+
+  }
+}
+
+.sign {
+  background-color: #25aaff;
+  color: #fff;
+  text-align: center !important;
+  width: 90%;
+  position: relative;
+  left: 5%;
+  height: 3rem;
+  @include m($t: 0.9rem);
+  height: 3rem;
+  line-height: 3rem;
+}
+
+.category {
+  @include m($t: 1.6rem);
+  display: flex;
+  text-align: center;
+  width: 100%;
+  font-size: 0.8rem;
+  color: #393939;
+  img {
+    width: 3rem;
+    height: 3rem;
+  }
+  > div {
+    width: 33%;
+  }
+}
+
+.bg {
+  background: url("../../assets/imgs/l-b.png");
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+  @include m($t: 1rem, $b: 1rem);
+  font-size: 1.8rem;
+}
+
+.title-1 {
+  text-align: center;
+  @include m($t: 1rem, $b: 1rem);
+  font-size: 10px;
+  color: #606060;
+}
+
+.use {
+  @include m($l: 5%)
+}
+
+.code {
+  display: flex;
+  @include m($l: 5%,$t:0.6rem);
+  @extend .ainput;
+  border: #fff solid 1px;
+  justify-content: space-between;
+  div {
+    width: 46%;
+    border: #eee 1px solid;
+  }
+  div:nth-child(2){
+    color: #fff;
+    background-color: #25aaff;
+  }
+}

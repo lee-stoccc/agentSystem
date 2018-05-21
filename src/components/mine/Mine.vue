@@ -1,0 +1,79 @@
+<template>
+    <div>
+        <div class="top">
+            <div class="img">
+                <div><img src="../../assets/imgs/1-1.png" alt=""></div>
+                <div>退出</div>
+            </div>
+            <div class="img-2">
+                <div class="name">
+                    <div><img src="../../assets/imgs/per.png" alt=""></div>
+                    <div>小名</div>
+                </div>
+                <div class="name">
+                    <div><img src="../../assets/imgs/tel.png" alt=""></div>
+                    <div>15920120020</div>
+                </div>
+            </div>
+        </div>
+        <div class="money">
+            <div><img src="../../assets/imgs/pri.png" alt="">&nbsp;&nbsp;速用币：<span>999</span></div>
+            <div><img src="../../assets/imgs/m-1-2.png" alt="">&nbsp;&nbsp;积分：<span>999</span></div>
+            <div><img src="../../assets/imgs/m-1-3.png" alt="">&nbsp;&nbsp;等级：<span>999</span></div>
+        </div>
+
+        <div class="category">
+            <div>
+                <div><img src="../../assets/imgs/m-2-1.png" alt=""></div>
+                <div>我的收藏</div>
+            </div>
+            <div>
+                <div><img src="../../assets/imgs/m-2-2.png" alt=""></div>
+                <div>我的发布</div>
+            </div>
+            <div>
+                <div><img src="../../assets/imgs/m-2-3.png" alt=""></div>
+                <div>我的代理</div>
+            </div>
+            <div>
+                <div><img src="../../assets/imgs/m-2-4.png" alt=""></div>
+                <div>我的客户</div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="category">
+            <div>
+                <div><img src="../../assets/imgs/m-3-1.png" alt=""></div>
+                <div>充币</div>
+            </div>
+            <div>
+                <div><img src="../../assets/imgs/m-3-2.png" alt=""></div>
+                <div>授权证书</div>
+            </div>
+            <div>
+                <div><img src="../../assets/imgs/m-3-3.png" alt=""></div>
+                <div>速用朋友圈</div>
+            </div>
+            <div>
+                <div><img src="../../assets/imgs/m-3-4.png" alt=""></div>
+                <div>我的邀请</div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="category">
+            <div>
+                <div><img src="../../assets/imgs/m-4-1.png" alt=""></div>
+                <div>资料库</div>
+            </div>
+            <div>
+                <div><img src="../../assets/imgs//m-4-2.png" alt=""></div>
+                <div>投诉反馈</div>
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<script src="./mine.js"></script>
+<style src="./mine.scss" lang="scss" scoped=""></style>
+

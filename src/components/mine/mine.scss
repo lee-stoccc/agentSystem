@@ -1,0 +1,91 @@
+@mixin m($t:0,$r:0,$b:0,$l:0){
+  margin-top:$t;
+  margin-right: $r;
+  margin-bottom: $b;
+  margin-left: $l;
+}
+@mixin p($t:0,$r:0,$b:0,$l:0){
+  padding-top: $t;
+  padding-right: $r;
+  padding-bottom: $b;
+  padding-left: $l;
+}
+.top{
+  height: 7.5rem;
+  display: flex;
+  background-color: #eee;
+  @include p($t:2rem,$l:2rem);
+  .img{
+    text-align: center;
+    color: #838282;
+  }
+  .img img{
+    width: 5rem;
+    height: 5rem;
+  }
+  .img-2{
+    @include m($l:1.6rem);
+    @include p($t:0.8rem);
+    img{
+      width: 1.7rem;
+      height: 1.5rem;
+    }
+    .name{
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      @include m($b:0.5rem);
+      div:nth-child(2){
+        @include m($l:0.6rem)
+      }
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+}
+.money{
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  @include m($t:1rem);
+  @include p($b:0.8rem);
+  border-bottom: 1px #eee solid;
+  span{
+    color:#ff5501 ;
+  }
+  div{
+    @include p($r:0.7rem);
+    border-right: solid #eee 1px;
+    height: 2rem;
+    line-height: 2rem;
+  }
+  img{
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}
+
+.category{
+  @include m($t:1.6rem);
+  display: flex;
+  text-align: center;
+  width: 100%;
+  font-size: 1rem;
+  color: #393939;
+  img{
+    width: 3rem;
+    height: 3rem;
+  }
+  >div{
+    width: 25%;
+  }
+}
+.line{
+  width: 100%;
+  height: 1px;
+  background-color: #eee;
+  @include m($t:1rem,$b:1rem)
+}
