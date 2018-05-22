@@ -5,20 +5,23 @@
             <div class="title-1">欢迎注册速用科技后台管理系统</div>
             <div class="use">用户名</div>
             <div class="ainput">
-                <input type="text" placeholder="companyName" v-model="companyName">
+                <input type="text" placeholder="companyName" v-model="companyName"  v-validate="'required|companyName'" name="companyName">
+                <div style="font-size:8px;color: red">{{ errors.first('companyName') }}</div>
             </div>
             <div class="use">手机号码</div>
             <div class="ainput">
-                <input type="text" placeholder="phone" v-model="phone">
+                <input type="text" placeholder="phone" v-model="phone" v-validate="'required|phone'" name="phone">
+                <div style="font-size:8px;color: red">{{ errors.first('phone') }}</div>
             </div>
             <div class="use">手机验证码</div>
             <div class="code">
-                <div><input type="text" placeholder="code" v-model="code"></div>
+                <div><input type="text" placeholder="code" v-model="code" ></div>
                 <div>获取验证码</div>
             </div>
+            <div style="font-size:8px;color: red;margin-left: 1.2rem" >{{ errors.first('code') }}</div>
             <div class="use" style="margin-top: 1rem" >密码</div>
             <div class="ainput">
-                <input type="text" placeholder="password" v-model="password">
+                <input placeholder="password" v-model="password"  type="password">
             </div>
             <div class="use" >推荐码</div>
             <div class="ainput">

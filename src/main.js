@@ -5,14 +5,12 @@ import App from './App'
 import router from './router'
 import Footer from './components/footer/Footer.vue'
 import axios from 'axios'
-import qs from 'qs'
-
+import '../static/validate.js'
+const URL='http://192.168.1.161'
 
 Vue.prototype.$axios = axios;
-
 Vue.component('Footer',Footer);
 Vue.config.productionTip = false;
-
 //封装的路由跳转函数
 Vue.prototype.go = function (name,params) {
     router.push({name:name,params:params})
@@ -20,7 +18,10 @@ Vue.prototype.go = function (name,params) {
 
 // 网络请求封装函数
 Vue.prototype.http= function (url,data) {
-    this.$axios.post(url,data,{
+    url=URL+url;
+    var that = this;
+    return new Promise((suc,fail) =>{
+            that.$axios.post(url,data,{
             transformRequest:[function (data) {
                 // 对 data 进行任意转换处理
                 let ret = '';
@@ -30,9 +31,10 @@ Vue.prototype.http= function (url,data) {
                 return ret   // return this.$qs.stringify(data);
             }],
             headers:{"Content-Type":'application/x-www-form-urlencoded;charset=UTF-8'}
-        }).then(res=>{
-        console.log('网络请求成功');
-        console.log(res)
+        }).then(function(res){
+            console.log(res);
+           suc(res)
+        });
     })
 };
 

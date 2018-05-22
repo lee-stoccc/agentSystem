@@ -9,7 +9,9 @@ import Trade from '@/components/Trade/Trade.vue'
 import Regist from '@/components/regist/Regist.vue'
 import Template from '@/components/template/Template.vue'
 import TempDetail from '@/components/tempDetail/TempDetail.vue'
-
+import Collect from '@/components/Collect/Collect.vue'
+import Publish from '@/components/publish/Publish.vue'
+import Share from '@/components/share/Share.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -60,6 +62,23 @@ export default new Router({
             name: 'TempDetail',
             component: TempDetail
         }
-
+        ,
+        {
+            path: '/Collect',
+            name: 'Collect',
+            component: Collect
+        }
+        ,
+        {
+            path: '/Publish',
+            name: 'Publish',
+            component: Publish
+        }
+        ,
+        {
+            path: '/Share',
+            name: 'Share',
+            component: Share
+        }
     ]
 })

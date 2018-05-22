@@ -1,0 +1,86 @@
+@mixin m($t:0,$r:0,$b:0,$l:0) {
+  margin-top: $t;
+  margin-right: $r;
+  margin-bottom: $b;
+  margin-left: $l;
+}
+
+@mixin p($t:0,$r:0,$b:0,$l:0) {
+  padding-top: $t;
+  padding-right: $r;
+  padding-bottom: $b;
+  padding-left: $l;
+}
+.coll{
+  color: #fff;
+  background-color: #25aaff;
+  padding-left: 2rem;
+  line-height: 2.4rem;
+  height: 2.4rem;
+  font-size:1.4rem;
+  @include m($t:1rem)
+}
+.area{
+  position: absolute;
+  right: 2rem;
+  z-index: 1;
+  text-align: center;
+  background-color: #fff;
+  div{
+    @include m($t:1rem,$b:1rem)
+  }
+}
+
+.dis{
+  display: none;
+}
+
+.dis2{
+  position: absolute;
+  left: 1rem;
+  z-index: 1;
+  background-color: #fff;
+  width: 6rem;
+  @include m($l:1rem)
+}
+.area-1{
+  width: 7rem;
+  @include p(0.8rem,5rem,0.8rem,1rem);
+  @include m($l:2rem,$t:1rem);
+  border: 1px #eee solid;
+  border-radius: 6px;
+}
+.area-2{
+  @extend .area-1;
+  width: 60%;
+  @include m($t:2rem,$l:2rem)
+
+}
+.pic{
+
+  width: 10rem;
+  height: 10rem;
+  text-align: center;
+  margin: 0 auto;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+.btn{
+  color: #fff;
+  background-color: #25aaff;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 8rem;
+  margin: 0 auto;
+  border-radius: 8px;
+  font-size:1.6rem;
+}
+.line{
+  background-color: #eee;
+  width: 100%;
+  height: 1px;
+  @include m($t:2rem,$b:2rem)
+}

@@ -26,8 +26,6 @@ export default {
         },
         choarea:function (e) {
             this.dot=!this.dot;
-
-            console.log(e)
         },
         chos:function (e) {
             this.dot=!this.dot;
