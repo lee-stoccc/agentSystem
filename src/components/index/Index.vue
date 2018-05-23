@@ -7,7 +7,15 @@
             <div><input type="text" placeholder="请输入搜索"></div>
         </div>
         <!--轮播图-->
-        <div class="swiper"><img src="../../assets/imgs/swiper01.jpg" alt=""></div>
+        <div class="swipera car">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../../../static/swiper01.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="../../../static/swiper02.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="../../../static/swiper03.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
         <!--类别-->
         <div class="category">
             <div>
@@ -65,6 +73,7 @@
         <Footer :type="type"></Footer>
     </div>
 </template>
-
+<link rel="stylesheet" href="/static/swiper.min.css" />
+<script src="/static/swiper.min.js"></script>
 <script src="./index.js"></script>
 <style src="./index.scss" lang="scss" scoped=""></style>

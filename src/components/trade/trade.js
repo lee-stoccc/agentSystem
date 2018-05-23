@@ -16,7 +16,7 @@ export default {
             ],
             aid:'',
             dot:true,
-            aname:'',
+            name:'花都',
             src:''
         }
     },
@@ -30,7 +30,7 @@ export default {
         chos:function (e) {
             this.dot=!this.dot;
             this.aid=e.target.dataset.sid;
-            this.aname=e.target.dataset.na;
+            this.name=e.target.dataset.na;
             this.type=e.target.dataset.sid
         }
 

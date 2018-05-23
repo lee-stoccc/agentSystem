@@ -10,14 +10,13 @@
                 <div :class="type==3?'cho':'uncho'" @click="show" id="3" data-s="3">合作经营</div>
                 <div class="colline"></div>
                 <div :class="type==4?'cho':'uncho'" @click="show" id="4" data-s="4" class="cho-list">
-                    <div :style="aid==''?'':'display:none'"  @click="choarea">运营 </div>
-                    <div :style="aid==''?'display:none':''"  @click="choarea">{{aname}}</div>
+                    <div @click="choarea">{{name}}</div>
                     <div><img src="../../assets/imgs/t-3.png" alt=""></div>
                 </div>
 
             </div>
-            <div  class="area"    @click="chos" :class="dot==true?'dis':'dis2'">
-                <div v-for="n in area" :data-sid=n.id  :data-na=n.name>{{n.name}}</div>
+            <div  class="area"    :class="dot==true?'dis':'dis2'">
+                <div v-for="n in area" :data-sid=n.id  :data-na=n.name  @click="chos">{{n.name}}</div>
             </div>
             <!--小程序-->
             <div class="d-1" :style="type==1?'':'display:none'">
