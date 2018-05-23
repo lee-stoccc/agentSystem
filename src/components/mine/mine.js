@@ -9,7 +9,9 @@ export default {
     data () {
         return {
             msg: 'Welcome to Your Vue.js App',
-            type:3
+            type:3,
+            login:0,
+            state:'登录'
         }
     }
 }

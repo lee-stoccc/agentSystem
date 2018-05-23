@@ -16,7 +16,7 @@
             <div class="use">手机验证码</div>
             <div class="code">
                 <div><input type="text" placeholder="code" v-model="code" ></div>
-                <div>获取验证码</div>
+                <button @click="getMsn" id="code"  :disabled="isDisable" >{{time}}</button>
             </div>
             <div style="font-size:8px;color: red;margin-left: 1.2rem" >{{ errors.first('code') }}</div>
             <div class="use" style="margin-top: 1rem" >密码</div>

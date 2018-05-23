@@ -2,8 +2,9 @@
     <div>
         <div class="top">
             <div class="img">
-                <div><img src="../../assets/imgs/1-1.png" alt=""></div>
-                <div>退出</div>
+                <div :style="login==1?'':'display :none'"><img src="../../assets/imgs/1-1.png" alt=""></div>
+                <div :style="login==1?'':'display :none'">退出</div>
+                <div style="height: 5rem;line-height: 5rem;margin-right: 1rem" :style="login==1?'display :none':''" @click="go('Login')">登录</div>
             </div>
             <div class="img-2">
                 <div class="name">

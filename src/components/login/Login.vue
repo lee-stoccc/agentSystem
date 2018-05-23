@@ -54,7 +54,7 @@
                         <div><img src="../../assets/imgs/l-3.png" alt=""></div>
                         <div>官网链接</div>
                     </div>
-                    <div>
+                    <div @click="go('Regist')">
                         <div><img src="../../assets/imgs/l-4.png" alt=""></div>
                         <div>快速注册</div>
                     </div>
