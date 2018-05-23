@@ -12,6 +12,9 @@ import TempDetail from '@/components/tempDetail/TempDetail.vue'
 import Collect from '@/components/Collect/Collect.vue'
 import Publish from '@/components/publish/Publish.vue'
 import Share from '@/components/share/Share.vue'
+import Friends from '@/components/friends/Friends.vue'
+import Agent from '@/components/agent/Agent.vue'
+import Customer from '@/components/customer/Customer.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -79,6 +82,23 @@ export default new Router({
             path: '/Share',
             name: 'Share',
             component: Share
+        },
+        {
+            path: '/Friends',
+            name: 'Friends',
+            component: Friends
+        }
+        ,
+        {
+            path: '/Agent',
+            name: 'Agent',
+            component: Agent
+        }
+        ,
+        {
+            path: '/Customer',
+            name: 'Customer',
+            component: Customer
         }
     ]
 })

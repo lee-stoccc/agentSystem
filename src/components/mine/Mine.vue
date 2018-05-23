@@ -23,19 +23,19 @@
         </div>
 
         <div class="category">
-            <div>
+            <div @click="go('Collect')">
                 <div><img src="../../assets/imgs/m-2-1.png" alt=""></div>
                 <div>我的收藏</div>
             </div>
-            <div>
+            <div @click="go('Publish')">
                 <div><img src="../../assets/imgs/m-2-2.png" alt=""></div>
                 <div>我的发布</div>
             </div>
-            <div>
+            <div @click="go('Agent')">
                 <div><img src="../../assets/imgs/m-2-3.png" alt=""></div>
                 <div>我的代理</div>
             </div>
-            <div>
+            <div  @click="go('Customer')">
                 <div><img src="../../assets/imgs/m-2-4.png" alt=""></div>
                 <div>我的客户</div>
             </div>
@@ -50,11 +50,11 @@
                 <div><img src="../../assets/imgs/m-3-2.png" alt=""></div>
                 <div>授权证书</div>
             </div>
-            <div>
+            <div @click="go('Friends')">
                 <div><img src="../../assets/imgs/m-3-3.png" alt=""></div>
                 <div>速用朋友圈</div>
             </div>
-            <div>
+            <div @click="go('Share')">
                 <div><img src="../../assets/imgs/m-3-4.png" alt=""></div>
                 <div>我的邀请</div>
             </div>
