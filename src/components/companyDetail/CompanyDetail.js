@@ -18,5 +18,8 @@ export default {
                 this.type=2
             }
         }
+    },
+    created:function (e) {
+        console.log(e)
     }
 }

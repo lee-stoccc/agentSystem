@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "qrcode": "^1.2.0",
     "smeditor": "^0.1.19",
     "swiper": "^4.2.6",
     "vee-validate": "^2.0.9",

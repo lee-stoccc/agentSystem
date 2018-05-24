@@ -42,11 +42,11 @@
                     <div><img src="../../assets/imgs/l-7.png" alt="" style="width: 1rem;height: 1.4rem"></div>
                 </div>
                 <div class="ainput">
-                    <input type="text" placeholder="请输入验证码" v-model="password" style="margin-right: -1rem">
+                    <input type="text" placeholder="请输入验证码" v-model="sms_num" style="margin-right: -1rem">
                     <button class="getcode" @click="getMsn" :disabled="isDisable" id="code"> {{time}}</button>
                     <!--<div><img src="../../assets/imgs/l-6.png" alt="" style="width: 4rem;height: 1.4rem;position: relative;margin-left: -2rem"></div>-->
                 </div>
-                <div class=" sign " @click="login">
+                <div class=" sign " @click="loginPhone">
                     马上登录
                 </div>
                 <div class="category">

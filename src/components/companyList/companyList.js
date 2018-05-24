@@ -13,11 +13,10 @@ export default {
         }
     },
     methods:{
-        go:function () {
-            let params={};
+        go:function (id) {
             this.$router.push({
                 name:'CompanyDetail',
-                params:{id:'213'}
+                params:{id:id}
             })
         }
     },

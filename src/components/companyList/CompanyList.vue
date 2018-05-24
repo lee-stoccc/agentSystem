@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="c-list" @click="go()" v-for="l in list" :id="l.id" data-cid="">
+        <div class="c-list" @click='go(l.id)' v-for="l in list" :id="l.id" :data-cid="l.id">
             <div><img :src="l.companyUrl" alt=""></div>
             <div>
                 <div>{{l.companyName}}</div>

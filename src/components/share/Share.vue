@@ -19,15 +19,14 @@
             <div class="z-3">
                 <div class="bg-1">注册速用科技用微信小程序挣钱，开启你的致富之旅！</div>
                 <div class="bg-2"><img src="../../assets/imgs/logo.png" alt=""></div>
+                <div id="qrcode">二维码位置</div>
                 <div class="bg-3" @click="save">保存分享</div>
             </div>
         </div>
     </div>
 </template>
-
-<script src="./share.js">
-
-</script>
+<script src="../../../static/qrcode.js"></script>
+<script src="./share.js"></script>
 
 <style src="./share.scss" lang="scss" scoped=""></style>
 

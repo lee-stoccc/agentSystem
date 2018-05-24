@@ -11,6 +11,8 @@ export default {
             show:'',
             time:'获取验证码',
             isDisable:false,
+            sms_num:'',
+            smsphone:""
         }
     },
     methods: {
@@ -22,10 +24,31 @@ export default {
             }
         },
 
-        //登录
+        //密码登录
         login:function () {
             var t=this;
             let datas={phone:this.phone,password:this.password}
+            let url='/login'
+            var ajax=new J.A();
+            ajax.ajaxs(url,datas,'POST').then(
+                function (res) {
+                    if(res.code==0){
+                        t.show=1;
+                        t.tips='登录成功';
+                        setTimeout(function () {
+                            t.show=0;
+                            t.go('Index')
+                        },2000);
+
+                    }
+                }
+            )
+        },
+
+        //短信登录
+        loginPhone:function () {
+            var t=this;
+            let datas={smsphone:this.phone,sms_num:this.sms_num}
             let url='/login'
             var ajax=new J.A();
             ajax.ajaxs(url,datas,'POST').then(
