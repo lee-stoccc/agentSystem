@@ -10,7 +10,6 @@ export default {
 
     data () {
         return {
-            msg: 'Welcome to Your Vue.js App',
             src: ['../../../static/f-1.png', '../../../static/f-2.png', '../../../static/f-3.png', '../../../static/f-4.png', '../../../static/fc-1.png', '../../../static/fc-2.png', '../../../static/fc-3.png', '../../../static/fc-4.png'],
         }
     },

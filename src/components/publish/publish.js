@@ -1,6 +1,7 @@
+
 export default {
     components: {
-        Publish: 'Publish'
+        Publish: 'Publish',
     },
     data () {
         return {
@@ -14,7 +15,18 @@ export default {
             ],
             dot:true,
             name:'广告合作',
-            aid:10
+            aid:10,
+            config: {
+                uploadUrl: 'http://localhost:8050',
+                uploadName: '',
+                uploadParams: {},
+                uploadCallback: (data) => {
+                    console.log(data)
+                },
+                uploadFailed: (err) => {
+                    console.log(err)
+                }
+            }
         }
     },
     methods:{
@@ -28,6 +40,10 @@ export default {
         }
     },
     mounted:function () {
-        console.log(this.$route.params.id)
-    }
+        console.log(this);
+        document.getElementById('input-area').style.minHeight='130px'
+    },
+
 }
+
+

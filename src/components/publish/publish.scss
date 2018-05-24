@@ -84,3 +84,10 @@
   height: 1px;
   @include m($t:2rem,$b:2rem)
 }
+.smeditor{
+  width: 90%;
+  .input-area{
+    min-height:100px;
+    max-height: 200px;
+  }
+}

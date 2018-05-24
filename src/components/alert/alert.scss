@@ -1,0 +1,28 @@
+@mixin m($t:0,$r:0,$b:0,$l:0) {
+  margin-top: $t;
+  margin-right: $r;
+  margin-bottom: $b;
+  margin-left: $l;
+}
+
+@mixin p($t:0,$r:0,$b:0,$l:0) {
+  padding-top: $t;
+  padding-right: $r;
+  padding-bottom: $b;
+  padding-left: $l;
+}
+
+.tip{
+  position: fixed;
+  width: 50%;
+  left: 25%;
+  background-color: #eee;
+  color: #25aaff;
+  height: 5rem;
+  top: 33%;
+  text-align: center;
+  line-height: 5rem;
+  border-radius: 10px;
+  z-index: 3;
+  font-size: 1.8rem;
+}

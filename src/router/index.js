@@ -15,6 +15,7 @@ import Share from '@/components/share/Share.vue'
 import Friends from '@/components/friends/Friends.vue'
 import Agent from '@/components/agent/Agent.vue'
 import Customer from '@/components/customer/Customer.vue'
+import Alert from '@/components/alert/Alert.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -99,6 +100,12 @@ export default new Router({
             path: '/Customer',
             name: 'Customer',
             component: Customer
+        }
+        ,
+        {
+            path: '/Alert',
+            name: 'Alert',
+            component: Alert
         }
     ]
 })

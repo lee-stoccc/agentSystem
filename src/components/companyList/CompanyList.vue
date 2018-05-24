@@ -1,30 +1,16 @@
 <template>
     <div>
-        <div class="c-list" @click="go()">
-            <div><img src="../../assets/imgs/swiper01.jpg" alt=""></div>
+        <div class="c-list" @click="go()" v-for="l in list" :id="l.id" data-cid="">
+            <div><img :src="l.companyUrl" alt=""></div>
             <div>
-                <div>阿帕奇有限公公司</div>
-                <div>地址：广州市花都区12号 <img src="../../assets/imgs/c-1.png" alt=""></div>
+                <div>{{l.companyName}}</div>
+                <div>{{l.companyAdress}}<img src="../../assets/imgs/c-1.png" alt=""></div>
                 <div>
-                    <span>20-50人</span>
+                    <span>{{l.number}}</span>
                     <span>/</span>
-                    <span>直升飞机批发</span>
+                    <span>{{l.companyProperty}}</span>
                     <span>/</span>
-                    <span>军火商</span>
-                </div>
-            </div>
-        </div>
-        <div class="c-list">
-            <div><img src="../../assets/imgs/swiper01.jpg" alt=""></div>
-            <div>
-                <div>阿帕奇有限公公司</div>
-                <div>地址：广州市花都区12号 <img src="../../assets/imgs/c-1.png" alt=""></div>
-                <div>
-                    <span>20-50人</span>
-                    <span>/</span>
-                    <span>直升飞机批发</span>
-                    <span>/</span>
-                    <span>军火商</span>
+                    <span>{{l.companyType}}</span>
                 </div>
             </div>
         </div>

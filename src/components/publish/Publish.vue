@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <div class="coll">我的发布</div>
+            <div class="coll" id="coll">我的发布</div>
 
                 <div class="area-1" @click="choarea"> {{name}}</div>
                 <div class="area"  :class=" dot==true?'dis':'dis2'">
@@ -38,6 +38,7 @@
                 </div>
             </div>
             <div class="line"></div>
+            <SMEditor :config='config' id="edit" style="margin-bottom: 2rem"></SMEditor>
         </div>
         <!--合作经营-->
         <div :style="aid==11?'':'display:none'">

@@ -1,11 +1,11 @@
 <template>
     <div>
         <!--搜索区-->
-        <div class="ban">
-            <div><img src="../../assets/imgs/for.png" alt=""></div>
-            <div class="dis">广州</div>
-            <div><input type="text" placeholder="请输入搜索"></div>
-        </div>
+        <!--<div class="ban">-->
+            <!--<div><img src="../../assets/imgs/for.png" alt=""></div>-->
+            <!--<div class="dis">广州</div>-->
+            <!--<div><input type="text" placeholder="请输入搜索"></div>-->
+        <!--</div>-->
         <!--轮播图-->
         <div class="swipera car">
             <div class="swiper-container">
@@ -74,6 +74,7 @@
     </div>
 </template>
 <link rel="stylesheet" href="/static/swiper.min.css" />
+<script src="../../../static/ajax.js"></script>
 <script src="/static/swiper.min.js"></script>
 <script src="./index.js"></script>
 <style src="./index.scss" lang="scss" scoped=""></style>

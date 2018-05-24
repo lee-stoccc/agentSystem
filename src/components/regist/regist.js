@@ -1,6 +1,10 @@
 /**
  * Created by Administrator on 2018/5/18 0018.
  */
+import $ from 'jquery'
+
+// 引入ajax 类
+import * as J from '../../../static/ajax'
 export default {
     name: 'Regist',
     data () {
@@ -12,9 +16,10 @@ export default {
             password: "",
             inviteCode: '',
             exit: false,
-            time: '点击获取验证码',
-            isDisable:false
-
+            time: '获取验证码',
+            isDisable:false,
+            show:0,
+            tips:'登录成功'
         }
     },
     methods: {
@@ -33,12 +38,30 @@ export default {
                         t.http('/sys/user/exit', datas).then(
                             function (res) {
                                 if (res.data == true) {
-                                    t.http('/register', datas).then(
-                                        function (res) {
-                                            console.log(res)
-                                        })
+                                    var ajax=new J.A();
+                                    ajax.ajaxs('/register',datas,"POST").then(function (res) {
+                                        if(res.code==0){
+                                            t.show=1
+                                            t.tips='注册成功';
+                                            setTimeout(function () {
+                                                t.show=0
+                                            },3000)
+                                        }else {
+                                            t.show=1
+                                            t.tips='注册失败，请重试';
+                                            setTimeout(function () {
+                                                t.show=0
+                                            },3000)
+                                        }
+                                    }).catch(function (err) {
+                                        console.log(err.code)
+                                    })
                                 } else {
-                                    console.log('用户名已存在')
+                                    t.show=1
+                                    t.tips='用户名已存在';
+                                    setTimeout(function () {
+                                        t.show=0
+                                    },3000)
                                 }
                             }
                         );
@@ -63,14 +86,14 @@ export default {
                 }
                 document.getElementById('code').style.backgroundColor = "#eee";
                 document.getElementById('code').style.color = "#25aaff";
-                t.time = times + 's重新获取';
+                t.time = times + 's后获取';
                 times--;
                 if (times == 0) {
                     clearInterval(wait);
                     t.isDisable = false;
                     document.getElementById('code').style.backgroundColor = "#25aaff";
                     document.getElementById('code').style.color = "#fff";
-                    t.time='点击获取验证码'
+                    t.time='获取验证码'
                 }
             }, 1000)
         }

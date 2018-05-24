@@ -42,6 +42,15 @@
   }
 }
 .ainput{
+  .getcode{
+    color: #fff;
+    background-color: #25aaff;
+    border: 0 solid red;
+    font-size:1rem;
+    @include p(0,0,0,0);
+    width: 6rem;
+  }
+  position: relative;
   text-align: center;
   display: flex;
   border: #eee 1px solid;
