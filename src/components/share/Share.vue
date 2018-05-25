@@ -18,8 +18,14 @@
             <img src="../../assets/imgs/l-b.png" alt="">
             <div class="z-3">
                 <div class="bg-1">注册速用科技用微信小程序挣钱，开启你的致富之旅！</div>
-                <div class="bg-2"><img src="../../assets/imgs/logo.png" alt=""></div>
-                <div id="qrcode">二维码位置</div>
+                <div class="bg-2"><div v-show="qrcodeUrl" class="response" >
+                    <qrcode
+                            :value="qrcodeUrl"
+                            v-if="qrcodeUrl"
+                            :options="{ size: 170 }">
+                    </qrcode>
+                </div></div>
+
                 <div class="bg-3" @click="save">保存分享</div>
             </div>
         </div>

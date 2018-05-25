@@ -1,6 +1,7 @@
 /**
  * Created by Administrator on 2018/5/18 0018.
  */
+import * as J from '../../../static/ajax.js'
 import Swiper from '../../../static/swiper.min.js'
 export default {
     name:'Index',
@@ -24,7 +25,9 @@ export default {
                 observeParents:true,
                 // 如果自行设计了插件，那么插件的一些配置相关参数，也应该出现在这个对象中，如下debugger
                 debugger: true,
-            }
+            },
+            swiperList:[],
+            picUrl:[]
 
 
         }
@@ -38,11 +41,21 @@ export default {
                 loop: true,
                 observer: true
             })
-        }
+        },
     },
     mounted:function () {
         console.log(this);
-        this.swiper()
+        this.swiper();
+        let t=this;
+        let ajax=new J.A();
+        //轮播图
+        ajax.ajaxs('/system/sowingmap/list','','GET').then(function (res) {
+            t.swiperList=res.rows
+        })
+        //图片
+        ajax.ajaxs('/common/sysFile/list','','GET').then(function (res) {
+            t.picUrl=res.rows
+        })
     },
 
 }

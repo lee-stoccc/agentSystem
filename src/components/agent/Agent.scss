@@ -73,10 +73,10 @@
 .d-1 {
   @include m($l: 1rem, $t: 1.4rem,$b:1.4rem);
   display: flex;
-  height: 7rem;
+  height: 5rem;
   > div:nth-child(1) {
-    line-height: 7rem;
-    width: 7rem;
+    line-height: 5rem;
+    width: 5rem;
     text-align: center;
     img {
       width: 100%;

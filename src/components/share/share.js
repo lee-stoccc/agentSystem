@@ -5,14 +5,16 @@
  * Created by Administrator on 2018/5/18 0018.
  */
 
-import QRCode from 'qrcode'
+import Qrcode from '@xkeshi/vue-qrcode';
 export default {
     components: {
-        Trade: 'Trade'
+        Trade: 'Trade',
+        qrcode: Qrcode
     },
     data () {
         return {
-            type: 0
+            type: 0,
+            qrcodeUrl:"www.baidu.com"
         }
     },
     methods: {
@@ -24,22 +26,8 @@ export default {
         save: function () {
             this.type=0
         },
-        qrcode:function () {
-            function qrcode () {
-                let qrcode = new QRCode('qrcode', {
-                    width: 1000,
-                    height: 1000, // 高度
-                    text: '56663159',
-                    render: 'canvas',
-                    background: '#f0f',
-                    foreground: '#ff0'
-                });
-                console.log(qrcode)
-            }
 
-        }
     },
     mounted: function () {
-        this.qrcode()
     }
 }

@@ -4,7 +4,7 @@ export default {
     data () {
         return {
             msg: 'Welcome to Your Vue.js App',
-            type:2,
+            type:1,
             phone:'',
             password:'',
             tips:'',

@@ -1,13 +1,16 @@
 /**
  * Created by Administrator on 2018/5/18 0018.
  */
+import * as J from '../../../static/ajax.js'
 export default {
     name: 'CompanyDetail',
 
     data () {
         return {
             msg: 'Welcome to Your Vue.js App',
-            type:1
+            type:1,
+            id:'',
+            l:''
         }
     },
     methods: {
@@ -21,5 +24,15 @@ export default {
     },
     created:function (e) {
         console.log(e)
+    },
+    mounted:function (e) {
+        var t=this;
+        this.id=this.$route.params.id;
+        var ajax =new J.A()
+        ajax.ajaxs('/system/company/getById',{id:this.id},'GET').then(function (res) {
+            console.log(res)
+            t.l=res
+        })
+
     }
 }

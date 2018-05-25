@@ -10,9 +10,9 @@
         <div class="swipera car">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="../../../static/swiper01.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="../../../static/swiper02.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="../../../static/swiper03.jpg" alt=""></div>
+                    <div class="swiper-slide" v-for="l in swiperList"><img :src='l.imgUrl' alt="" :id='l.id'></div>
+                    <!--<div class="swiper-slide"><img src="../../../static/swiper02.jpg" alt=""></div>-->
+                    <!--<div class="swiper-slide"><img src="../../../static/swiper03.jpg" alt=""></div>-->
                 </div>
             </div>
         </div>
@@ -66,10 +66,13 @@
             <img src="../../assets/imgs/swiper01.jpg" alt="">
         </div>
 
-        <div class="temp">
-            <div>1</div>
-            <div>2</div>
+        <div class="temp" >
+            <div v-for="l in picUrl">
+                <div :id='l.id'><img :src='l.url' alt=""></div>
+            </div>
+
         </div>
+
         <Footer :type="type"></Footer>
     </div>
 </template>
