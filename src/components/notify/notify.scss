@@ -1,0 +1,41 @@
+@mixin m($t:0,$r:0,$b:0,$l:0) {
+  margin-top: $t;
+  margin-right: $r;
+  margin-bottom: $b;
+  margin-left: $l;
+}
+
+@mixin p($t:0,$r:0,$b:0,$l:0) {
+  padding-top: $t;
+  padding-right: $r;
+  padding-bottom: $b;
+  padding-left: $l;
+}
+
+.coll{
+  color: #fff;
+  background-color: #25aaff;
+  padding-left: 2rem;
+  line-height: 2.4rem;
+  height: 2.4rem;
+  font-size:1.4rem;
+  @include m($t:1rem)
+}
+.msg{
+  background-color: #ffffff;
+  @include p(0.5rem,0.5rem,0.5rem,0.5rem);
+  @include m(1rem,1rem,1rem,1rem);
+  div:nth-child(1){
+    font-size: 1.6rem;
+    color: #333;
+  }
+  div:nth-child(2){
+    @include p($l:0.6rem,$t:0.5rem);
+    color: #666;
+  }
+  div:nth-child(3){
+    text-align: right;
+    color: #838282;
+  }
+  border-radius: 6px;
+}

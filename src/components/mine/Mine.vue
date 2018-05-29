@@ -70,6 +70,12 @@
                 <div><img src="../../assets/imgs//m-4-2.png" alt="" ></div>
                 <div>投诉反馈</div>
             </div>
+            <div @click="go('Notify')" style="position: relative">
+                <div><img src="../../assets/imgs/msg.png" alt="" ></div>
+                <div>我的消息</div>
+                <div class="msg">1</div>
+            </div>
+
         </div>
         <Footer :type="type"></Footer>
     </div>

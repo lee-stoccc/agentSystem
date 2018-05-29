@@ -41,6 +41,15 @@ export default {
                 observer: true
             })
         },
+        //收藏
+        coll:function (gourl,name) {
+            let t =this;
+            let url = window.location.href;
+            let ajax=new J.A();
+            ajax.ajaxs(gourl,{name:name,url:url},'GET').then(function (res) {
+                console.log(res+111)
+            });
+        }
     },
     mounted:function () {
         var t=this;

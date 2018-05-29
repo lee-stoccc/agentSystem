@@ -18,6 +18,7 @@ import Customer from '@/components/customer/Customer.vue'
 import Alert from '@/components/alert/Alert.vue'
 import TradeDetail from '@/components/tradeDetail/TradeDetail.vue'
 import Feedback from '@/components/feedback/Feedback.vue'
+import Notify from '@/components/notify/Notify.vue'
 Vue.use(Router);
 
 export default new Router({
@@ -118,6 +119,11 @@ export default new Router({
             path: '/Feedback',
             name: 'Feedback',
             component: Feedback
+        },
+        {
+            path: '/Notify',
+            name: 'Notify',
+            component: Notify
         }
     ]
 })

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="logo"><img src="../../assets/imgs/swiper01.jpg" alt=""></div>
-        <div>
+        <div style="margin-bottom: 5rem">
             <div class="type">
                 <div :class="types==1?'cho':'uncho'" @click="show" id="1" data-s="1">小程序</div>
                 <div class="colline"></div>
@@ -11,7 +11,7 @@
                 <div class="colline"></div>
                 <div :class="types==4?'cho':'uncho'" @click="show" id="4" data-s="4" class="cho-list">
                     <div @click="choarea">{{name}}</div>
-                    <div><img src="../../assets/imgs/t-3.png" alt=""></div>
+                    <div><img src="../../assets/imgs/t-3.png" alt="" ></div>
                 </div>
 
             </div>
@@ -22,17 +22,17 @@
             <div class="d-1" :style="types==1?'':'display:none'"
                  v-for="l in list1"
                  @click="go('TradeDetail',{id:l.id,types:3})">
-                <div><img :src='l.advertisingMainImgurl' alt=""></div>
+                <div><img :src='l.miniappMainImgurl' alt=""></div>
                 <div>
-                    <div class="d-2"><span>{{l.advertisingName}}</span><span style="color:#ec3939">￥&nbsp;</span><span
-                            style="color:#e82424">{{l.advertisingMoney}}</span></div>
+                    <div class="d-2"><span>{{l.miniappName}}</span><span style="color:#ec3939">￥&nbsp;</span><span
+                            style="color:#e82424">{{l.miniappMoney}}</span></div>
                     <div class="d-2 d-3"><span>小程序类别</span><img src="../../assets/imgs/t-1.png"
-                                                                alt="">&nbsp;&nbsp;<span>粉丝：</span><span>{{l.advertisingFans}}</span>
+                                                                alt="">&nbsp;&nbsp;<span>粉丝：</span><span>{{l.miniappFans}}</span>
                     </div>
                     <div class="d-2 d-3">
-                        <img src="../../assets/imgs/tel2.png" alt="">&nbsp;&nbsp;<span>15920128088</span>
+                        <img src="../../assets/imgs/tel2.png" alt="">&nbsp;&nbsp;<span>{{l.miniappPhone}}</span>
                         <span class="d-r"></span>
-                        <img src="../../assets/imgs/m-2-1.png" alt="">&nbsp;&nbsp;
+                        <img src="../../assets/imgs/m-2-1.png" alt="" @click="coll(l.miniappName,'/system/wechat/myCollection')">&nbsp;&nbsp;
                     </div>
                 </div>
             </div>
@@ -40,9 +40,9 @@
             <div class="d-1" :style="types==2?'':'display:none'"
                  v-for="l in list2"
                  @click="go('TradeDetail',{id:l.id,types:1})">
-                <div><img :src='l.advertisingDetailsImgurl' alt=""></div>
+                <div><img :src='l.advertisingMainImgurl' alt=""></div>
                 <div>
-                    <div class="d-2"><span>{{l.advertisingName}}</span><span style="color:#ec3939" @click="go('TradeDetail',{id:12,types:1})">￥&nbsp;</span><span
+                    <div class="d-2"><span>{{l.advertisingName}}</span><span style="color:#ec3939" >￥&nbsp;</span><span
                             style="color:#e82424">{{l.advertisingMoney}}</span></div>
                     <div class="d-2"><span style="font-size: 1rem">合作类型:{{l.cooperationType}}</span><span>合作行业:{{l.cooperationBusiness}}</span></div>
                     <div class="d-2 d-3">
@@ -51,40 +51,63 @@
                         <img src="../../assets/imgs/t-1.png" alt="">&nbsp;&nbsp;<span>粉丝：</span><span>{{l.advertisingFans}}</span>
                     </div>
                     <div class="d-2 d-3">
-                        <img src="../../assets/imgs/tel2.png" alt="">&nbsp;&nbsp;<span>15920128088</span>
+                        <img src="../../assets/imgs/tel2.png" alt="">&nbsp;&nbsp;<span>{{l.advertisingPhone}}</span>
                         <span class="d-r"></span>
                         <img src="../../assets/imgs/m-2-1.png" alt="">&nbsp;&nbsp;
                     </div>
                 </div>
             </div>
             <!--合作经营-->
-            <div class="d-1" :style="types==3?'':'display:none'" @click="go('TradeDetail',{id:12,types:3})">
-                <div><img src="../../assets/imgs/c-1.png" alt=""></div>
+            <div class="d-1" :style="types==3?'':'display:none'"
+                 v-for="l in list3"
+                 @click="go('TradeDetail',{id:l.id,types:3})">
+                <div><img :src='l.manageMainImgurl' alt=""></div>
                 <div>
-                    <div class="d-2"><span>合作经营</span><span style="color:#ec3939">￥&nbsp;</span><span
-                            style="color:#e82424">9.99</span></div>
-                    <div class="d-2 d-3"><span>小程序行业</span><img src="../../assets/imgs/t-1.png"
-                                                                alt="">&nbsp;&nbsp;<span>粉丝：</span><span>9.99</span>
+                    <div class="d-2"><span>{{l.miniappName}}</span><span style="color:#ec3939">￥&nbsp;</span><span
+                            style="color:#e82424">{{l.manageMoney}}</span></div>
+                    <div class="d-2 d-3"><span>{{l.miniappVocation}}</span><img src="../../assets/imgs/t-1.png"
+                                                                alt="">&nbsp;&nbsp;<span>粉丝：</span><span>{{l.manageFans}}</span>
                     </div>
                     <div class="d-2 d-3">
-                        <img src="../../assets/imgs/tel2.png" alt="">&nbsp;&nbsp;<span>15920128088</span>
+                        <img src="../../assets/imgs/tel2.png" alt="">&nbsp;&nbsp;<span>{{l.managePhone}}</span>
                         <span class="d-r"></span>
                         <img src="../../assets/imgs/m-2-1.png" alt="">&nbsp;&nbsp;
                     </div>
                 </div>
 
             </div>
-            <!--运营-->
-            <div class="d-1" :style="types==4?'':'display:none'" @click="go('TradeDetail',{id:12,types:4})">
-                <div><img src="../../assets/imgs/c-1.png" alt=""></div>
+            <!--运营商-->
+            <div class="d-1" :style="types==4?'':'display:none'"
+                 v-for="l in list4"
+                 @click="go('TradeDetail',{id:l.id,types:4})">
+                <div><img :src="l.operatorMainImgurl" alt=""></div>
                 <div>
-                    <div class="d-2"><span>运营商</span><span style="color:#ec3939">￥&nbsp;</span><span
-                            style="color:#e82424">9.99</span></div>
-                    <div class="d-2 d-3"><span>周期：<span>2-5月</span></span><img src="../../assets/imgs/t-1.png"
-                                                                alt="">&nbsp;&nbsp;<span>粉丝：</span><span>9.99</span>
+                    <div class="d-2"><span>{{l.operatorName}}</span><span style="color:#ec3939">￥&nbsp;</span><span
+                            style="color:#e82424">{{l.operatorPhone}}</span></div>
+                    <div class="d-2 d-3"><span>周期：<span>{{l.operatorCycle}}</span></span><img src="../../assets/imgs/t-1.png"
+                                                                alt="">&nbsp;&nbsp;<span>粉丝：</span><span>{{l.operatorFans}}</span>
                     </div>
                     <div class="d-2 d-3">
-                        <img src="../../assets/imgs/tel2.png" alt="">&nbsp;&nbsp;<span>15920128088</span>
+                        <img src="../../assets/imgs/tel2.png" alt="">&nbsp;&nbsp;<span>{{l.operatorMoney}}</span>
+                        <span class="d-r"></span>
+                        <img src="../../assets/imgs/m-2-1.png" alt="">&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+
+            <!--商家-->
+            <div class="d-1" :style="types==5?'':'display:none'"
+                 v-for="l in list5"
+                 @click="go('TradeDetail',{id:l.id,types:4})">
+                <div><img :src='l.merchantMainImgurl' alt=""></div>
+                <div>
+                    <div class="d-2"><span>{{l.merchantName}}</span><span style="color:#ec3939">￥&nbsp;</span><span
+                            style="color:#e82424">{{l.merchantPhone}}</span></div>
+                    <div class="d-2 d-3"><span>行业：<span>{{l.merchantTrade}}</span></span><img src="../../assets/imgs/t-1.png"
+                                                                               alt="">&nbsp;&nbsp;<span>粉丝：</span><span>{{l.merchantTrade}}</span>
+                    </div>
+                    <div class="d-2 d-3">
+                        <img src="../../assets/imgs/tel2.png" alt="">&nbsp;&nbsp;<span>{{l.merchantPhone}}</span>
                         <span class="d-r"></span>
                         <img src="../../assets/imgs/m-2-1.png" alt="">&nbsp;&nbsp;
                     </div>

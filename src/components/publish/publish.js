@@ -58,6 +58,7 @@ export default {
             t.tips='发布成功';
             setTimeout(function () {
                 t.show=0;
+                t.go('Mine')
             },2000)
         },
         //广告合作发布
