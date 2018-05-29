@@ -10,29 +10,29 @@
             </div>
         </div>
         <!--广告合作-->
-        <form action="" id="signupForm">
+        <form action="" id="signupForm1">
             <div :style="aid==10?'':'display:none'">
                 <div class="area-2">
-                    名称:   <input type="text" v-model="advertisingName" name="advertisingName">
+                    名称:   <input type="text" name="advertisingName">
                 </div>
                 <div class="area-2">
-                    联系电话:   <input type="text" v-model="advertisingPhone" name="advertisingPhone">
+                    联系电话:   <input type="text" name="advertisingPhone">
                 </div>
                 <div class="area-2">
-                    合作类型:<input type="text" v-model="cooperationType" name="cooperationType">
+                    合作类型:<input type="text" name="cooperationType">
                 </div>
                 <div class="area-2">
-                    合作行业:<input type="text" v-model="cooperationBusiness" name="cooperationBusiness">
+                    合作行业:<input type="text" name="cooperationBusiness">
                 </div>
                 <div style="display: flex">
                     <div class="area-2 a-3" style="width:37%">
-                        粉丝:<input type="text" v-model="advertisingFans" name="advertisingFans">
+                        粉丝:<input type="text" name="advertisingFans">
                     </div>
                     <div class="area-2 a-3" style="width: 37%;margin-left: 0">
-                        价格:<input type="text" v-model="advertisingMoney" name="advertisingMoney">
+                        价格:<input type="text" name="advertisingMoney">
                     </div>
                 </div>
-                <div class="text-4 area-2"><textarea rows="3" v-model="advertisingDetails"
+                <div class="text-4 area-2"><textarea rows="3"
                                                      name="advertisingDetails"></textarea></div>
                 <div>
                     <div class="pic">
@@ -47,31 +47,31 @@
             </div>
         </form>
         <!--合作经营-->
-        <form action="" id="signupForm1">
+        <form action="" id="signupForm2">
             <div :style="aid==11?'':'display:none'">
                 <div class="area-2">
-                    名称:<input type="text" v-model="advertisingName" name="miniappName">
+                    名称:<input type="text" name="miniappName">
                 </div>
                 <div class="area-2">
-                    联系电话:   <input type="text" v-model="advertisingPhone" name="managePhone">
+                    联系电话:   <input type="text" name="managePhone">
                 </div>
                 <div class="area-2">
-                    行业:<input type="text" v-model="advertisingName" name="miniappVocation">
+                    行业:<input type="text" name="miniappVocation">
                 </div>
                 <div style="display: flex">
                     <div class="area-2 a-3" style="width:37%">
-                        粉丝:<input type="text" v-model="advertisingFans" name="manageFans">
+                        粉丝:<input type="text" name="manageFans">
                     </div>
                     <div class="area-2 a-3" style="width: 37%;margin-left: 0">
-                        价格:<input type="text" v-model="advertisingMoney" name="manageMoney">
+                        价格:<input type="text" name="manageMoney">
                     </div>
                 </div>
-                <div class="text-4 area-2"><textarea rows="3" v-model="manageDetails"
+                <div class="text-4 area-2"><textarea rows="3"
                                                      name="advertisingDetails"></textarea></div>
                 <div>
                     <div class="pic">
-                        <input type="file" name="file1" accept="image/*" capture="camera" >
-                        <input type="file" name="file2" accept="image/*" capture="camera" >
+                        <input type="file" name="file1" accept="image/*" capture="camera">
+                        <input type="file" name="file2" accept="image/*" capture="camera">
                     </div>
                 </div>
                 <div class="line"></div>
@@ -81,77 +81,97 @@
             </div>
         </form>
         <!--运营商-->
-        <div :style="aid==12?'':'display:none'">
-            <div class="area-2">
-                名称:
-            </div>
-            <div class="area-2">
-                周期:
-            </div>
-            <div style="display: flex">
-                <div class="area-2" style="width: 18.5%">
-                    粉丝:
+        <form action="" id="signupForm4">
+            <div :style="aid==12?'':'display:none'">
+                <div class="area-2">
+                    名称:<input type="text" name="operatorName">
                 </div>
-                <div class="area-2" style="width: 18.5%;margin-left: 0">
-                    价格:
+                <div class="area-2">
+                    联系电话:   <input type="text" name="operatorPhone">
                 </div>
-            </div>
-            <div style="margin-top: 2rem">
-            </div>
-            <div style="margin-top: 1rem">
-                <div class="btn">
-                    上传主图
+                <div class="area-2">
+                    周期:<input type="text" name="operatorCycle">
                 </div>
+                <div style="display: flex">
+                    <div class="area-2 a-3" style="width:37%">
+                        粉丝:<input type="text" name="operatorFans">
+                    </div>
+                    <div class="area-2 a-3" style="width: 37%;margin-left: 0">
+                        价格:<input type="text" name="operatorMoney">
+                    </div>
+                </div>
+                <div class="text-4 area-2"><textarea rows="3"
+                                                     name="operatorDetails"></textarea></div>
+                <div>
+                    <div class="pic">
+                        <input type="file" name="file1" accept="image/*" capture="camera">
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div @click="sub4" class="sub"> 点击提交</div>
             </div>
-            <div class="line"></div>
-        </div>
+        </form>
         <!--商家-->
-        <div :style="aid==13?'':'display:none'">
-            <div class="area-2">
-                名称:
-            </div>
-            <div class="area-2">
-                行业:
-            </div>
-            <div style="display: flex">
-                <div class="area-2" style="width: 40%;margin-left:2rem">
-                    价格:
+        <form action="" id="signupForm5">
+            <div :style="aid==13?'':'display:none'">
+                <div class="area-2">
+                    名称:<input type="text" name="merchantName">
                 </div>
-            </div>
-            <div style="margin-top: 2rem">
-            </div>
-            <div style="margin-top: 1rem">
-                <div class="btn">
-                    上传主图
+                <div class="area-2">
+                    联系电话:   <input type="text" name="merchantPhone">
                 </div>
+                <div class="area-2">
+                    行业:<input type="text" name="merchantTrade">
+                </div>
+                <div style="display: flex">
+                    <div class="area-2" style="width: 40%;margin-left:2rem">
+                        价格:<input type="text" name="merchantBudget">
+                    </div>
+                </div>
+                <div class="text-4 area-2"><textarea rows="3"
+                                                     name="merchantDetails"></textarea></div>
+                <div>
+                    <div class="pic">
+                        <input type="file" name="file1" accept="image/*" capture="camera">
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div @click="sub5" class="sub"> 点击提交</div>
             </div>
-            <div class="line"></div>
-        </div>
+        </form>
         <!--小程序模板-->
-        <div :style="aid==14?'':'display:none'">
-            <div class="area-2">
-                产品名称:
-            </div>
-            <div class="area-2">
-                小程序类别:
-            </div>
-            <div style="display: flex">
-                <div class="area-2" style="width: 18.5%;margin-left: 2rem">
-                    粉丝:
+        <form action="" id="signupForm3">
+            <div :style="aid==14?'':'display:none'">
+                <div class="area-2">
+                    产品名称:<input type="text" name="miniappName">
                 </div>
-                <div class="area-2" style="width: 18.5%;margin-left: 0">
-                    价格:
+                <div class="area-2">
+                    联系电话:   <input type="text" name="miniappPhone">
                 </div>
-            </div>
-            <div style="margin-top: 2rem">
-            </div>
-            <div style="margin-top: 1rem">
-                <div class="btn">
-                    上传主图
+                <div class="area-2">
+                    小程序类别:<input type="text" name="miniappType" style="width: 66%">
                 </div>
+                <div style="display: flex">
+                    <div class="area-2 a-3" style="width:37%">
+                        粉丝:<input type="text" name="miniappFans">
+                    </div>
+                    <div class="area-2 a-3" style="width: 37%;margin-left: 0">
+                        价格:<input type="text" name="miniappMoney">
+                    </div>
+                </div>
+                <div class="text-4 area-2"><textarea rows="3"
+                                                     name="miniappDetails"></textarea></div>
+
+                <div>
+                    <div class="pic">
+                        <input type="file" name="file1" accept="image/*" capture="camera">
+                        <input type="file" name="file2" accept="image/*" capture="camera">
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div @click="sub3" class="sub"> 点击提交</div>
             </div>
-            <div class="line"></div>
-        </div>
+        </form>
         <Alert :show="show" :tips="tips"></Alert>
     </div>
 </template>

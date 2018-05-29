@@ -49,5 +49,7 @@ export default {
             console.log(res)
             t.list1=res;
         })
+
+        //
     }
 }

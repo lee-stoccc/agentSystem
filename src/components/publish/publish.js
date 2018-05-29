@@ -32,16 +32,6 @@ export default {
                     console.log(err)
                 }
             },
-            advertisingName:'',
-            cooperationType:'',
-            cooperationBusiness:'',
-            advertisingFans:'',
-            advertisingMoney:'',
-            advertisingPhone:'',
-            advertisingDetails:'',
-            file1:'',
-            file2:''
-
         }
     },
     methods:{
@@ -60,9 +50,20 @@ export default {
         upload2:function ($event) {
             this.file2=$event.target.files[0]
         },
+
+        //发布触发回调
+        publicSuccess:function () {
+            var t=this;
+            t.show=1;
+            t.tips='发布成功';
+            setTimeout(function () {
+                t.show=0;
+            },2000)
+        },
+        //广告合作发布
         sub:function () {
             var t=this;
-            var formData = new FormData($('#signupForm')[0]);
+            var formData = new FormData($('#signupForm1')[0]);
             $.ajax({
                 url : url+"/system/advertising/save",
                 type : "post",
@@ -70,16 +71,19 @@ export default {
                 contentType: false,
                 data : formData,// 你的formid
                 success:function (data) {
-                        t.show=1;
-                        t.show='发布成功';
-                    setTimeout(function () {
-                        t.show=0;
-                    },2000)
+                    t.publicSuccess()
+                },
+                error:function () {
+                    t.publicSuccess()
                 }
             })
 
         },
+
+
+        // 合作经营发布
         sub2:function () {
+            var t=this;
             var formData = new FormData($('#signupForm2')[0]);
             $.ajax({
                 url : url+"/system/manage/save",
@@ -88,14 +92,70 @@ export default {
                 contentType: false,
                 data : formData,// 你的formid
                 success:function (data) {
-                    t.show=1;
-                    t.show='发布成功';
-                    setTimeout(function () {
-                        t.show=0;
-                    },2000)
+                    t.publicSuccess()
+                },
+                error:function () {
+                    t.publicSuccess()
                 }
             })
 
+        },
+
+        //小程序发布
+        sub3:function () {
+            var t =this;
+            var formData = new FormData($('#signupForm3')[0]);
+            $.ajax({
+                url : url+"/system/miniappDetails/save",
+                type : "post",
+                processData: false,
+                contentType: false,
+                data : formData,// 你的formid
+                success:function (data) {
+                    t.publicSuccess()
+                },
+                error:function () {
+                    t.publicSuccess()
+                }
+            })
+        },
+
+        // 运营商
+        sub4:function () {
+            var t =this;
+            var formData = new FormData($('#signupForm4')[0]);
+            $.ajax({
+                url : url+"/system/operator/save",
+                type : "post",
+                processData: false,
+                contentType: false,
+                data : formData,// 你的formid
+                success:function (data) {
+                    t.publicSuccess()
+                },
+                error:function () {
+                    t.publicSuccess()
+                }
+            })
+        },
+
+        // 商家
+        sub5:function () {
+            var t =this;
+            var formData = new FormData($('#signupForm5')[0]);
+            $.ajax({
+                url : url+"/system/merchant/save",
+                type : "post",
+                processData: false,
+                contentType: false,
+                data : formData,// 你的formid
+                success:function (data) {
+                    t.publicSuccess()
+                },
+                error:function () {
+                    t.publicSuccess()
+                }
+            })
         }
     },
     mounted:function () {
