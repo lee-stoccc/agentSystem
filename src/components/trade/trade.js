@@ -1,6 +1,7 @@
 /**
  * Created by Administrator on 2018/5/18 0018.
  */
+import * as J from '../../../static/ajax'
 export default {
     components: {
         Trade: 'Trade'
@@ -8,21 +9,22 @@ export default {
     data () {
         return {
             msg: 'Welcome to Your Vue.js App',
-            type: 2,
+            types: 1,
             area: [
-                {id: 10, name: '花都'},
-                {id: 12, name: '美利坚'},
-                {id: 11, name: '运营'},
+                {id: 4, name: '运营'},
+                {id: 4, name: '商家'},
             ],
             aid:'',
             dot:true,
-            name:'花都',
-            src:''
+            name:'运营',
+            src:'',
+            list2:[],
+            list1:[]
         }
     },
     methods: {
         show: function (e) {
-            this.type = e.target.dataset.s
+            this.types = e.target.dataset.s
         },
         choarea:function (e) {
             this.dot=!this.dot;
@@ -31,11 +33,21 @@ export default {
             this.dot=!this.dot;
             this.aid=e.target.dataset.sid;
             this.name=e.target.dataset.na;
-            this.type=e.target.dataset.sid
+            this.types=e.target.dataset.sid
         }
 
     },
     mounted:function () {
-            console.log(this)
+        var t=this;
+        var ajax =new J.A();
+        //广告合作
+        ajax.ajaxs('/system/advertising/getListByStatus',{},'GET').then(function (res) {
+            t.list2=res;
+        })
+            //小程序
+        ajax.ajaxs('/system/miniappDetails/getListByStatus',{},'GET').then(function (res) {
+            console.log(res)
+            t.list1=res;
+        })
     }
 }

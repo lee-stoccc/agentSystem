@@ -9,18 +9,18 @@
             <div class="img-2">
                 <div class="name">
                     <div><img src="../../assets/imgs/per.png" alt=""></div>
-                    <div>小名</div>
+                    <div>{{info.companyName}}</div>
                 </div>
                 <div class="name">
                     <div><img src="../../assets/imgs/tel.png" alt=""></div>
-                    <div>15920120020</div>
+                    <div>{{info.phone}}</div>
                 </div>
             </div>
         </div>
         <div class="money">
-            <div><img src="../../assets/imgs/pri.png" alt="">&nbsp;&nbsp;速用币：<span>999</span></div>
-            <div><img src="../../assets/imgs/m-1-2.png" alt="">&nbsp;&nbsp;积分：<span>999</span></div>
-            <div><img src="../../assets/imgs/m-1-3.png" alt="">&nbsp;&nbsp;等级：<span>999</span></div>
+            <div><img src="../../assets/imgs/pri.png" alt="" style="position: relative;top: 2px;margin-right: 2px">速用币：<span>{{info.wyzMoney}}</span></div>
+            <div><img src="../../assets/imgs/m-1-2.png" alt="" style="position: relative;top: 2px;margin-right:2px">总速用币：<span>{{info.wyzAllmoney}}</span></div>
+            <div><img src="../../assets/imgs/m-1-3.png" alt="" style="position: relative;top: 2px;margin-right: 2px">等级：<span>{{info.agencyRank}}</span></div>
         </div>
 
         <div class="category">
@@ -66,8 +66,8 @@
                 <div><img src="../../assets/imgs/m-4-1.png" alt=""></div>
                 <div>资料库</div>
             </div>
-            <div>
-                <div><img src="../../assets/imgs//m-4-2.png" alt=""></div>
+            <div @click="go('Feedback')">
+                <div><img src="../../assets/imgs//m-4-2.png" alt="" ></div>
                 <div>投诉反馈</div>
             </div>
         </div>

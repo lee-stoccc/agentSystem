@@ -42,7 +42,10 @@ export default {
 
                     }
                 }
-            )
+            ).catch(function (err) {
+                console.log(err);
+                console.log(111)
+            })
         },
 
         //短信登录

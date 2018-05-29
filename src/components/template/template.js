@@ -1,17 +1,22 @@
-
+import * as J from '../../../static/ajax.js'
 export default {
     name:'Index',
     data () {
         return {
             msg: 'Welcome to Your Vue.js App',
             type:1,
+            list:[]
         }
     },
     methods:{
 
     },
     mounted:function () {
-        console.log(this.$route.params.id)
+        var t =this;
+        var ajax =new J.A();
+        ajax.ajaxs('/system/wechat/list',{},'GET').then(function (res) {
+            t.list=res.rows
+        })
 
     }
 }

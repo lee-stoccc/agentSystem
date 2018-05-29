@@ -1,11 +1,11 @@
 <template>
     <div>
-        <div class="text">邀请好友注册成功即可获得1速用币奖励</div>
+        <div class="text">邀请好友注册成功即可获得{{coin}}速用币奖励</div>
         <div class="text-1">邀请好友注册速用科技，开启你的致富之旅吧！</div>
         <div class="line"></div>
         <div class="text-2">注册速用科技用微信小程序挣钱，开启你的致富之旅！
             <div class="t-3">
-                <div>www.baidu.com</div>
+                <div style="width: 73%;word-wrap: break-word; word-break: normal; ">{{qrcodeUrl}}</div>
                 <div><img src="../../assets/imgs/logo.png" alt=""></div>
             </div>
         </div>

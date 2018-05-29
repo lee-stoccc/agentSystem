@@ -53,18 +53,25 @@
 .area-2{
   @extend .area-1;
   width: 60%;
-  @include m($t:2rem,$l:2rem)
+  @include m($t:2rem,$l:2rem);
+  input{
+    width: 70%;
+    border: 1px #fff solid;
+    resize:none;
+    outline:none
+  }
 
 }
+.a-3{
+  @include p($t:0.8rem,$b:0.8rem,$l:1rem);
+  width: 35%;
+}
 .pic{
-
   width: 10rem;
-  height: 10rem;
   text-align: center;
   margin: 0 auto;
-  img{
-    width: 100%;
-    height: 100%;
+  input{
+    @include p($t:1rem)
   }
 }
 .btn{
@@ -90,4 +97,26 @@
     min-height:100px;
     max-height: 200px;
   }
+}
+.text-4{
+  @include m($l:2rem,$t:2rem);
+  textarea{
+    width: 120%;
+    border: 1px #fff solid;
+    resize:none;
+    outline:none
+  }
+
+}
+.sub{
+  text-align: center;
+  color: #007aff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  height: 3rem;
+  line-height: 3rem;
+  width: 50%;
+  position: relative;
+  left: 25%;
+  @include m($b:2rem)
 }

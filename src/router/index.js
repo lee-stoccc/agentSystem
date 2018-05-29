@@ -16,7 +16,9 @@ import Friends from '@/components/friends/Friends.vue'
 import Agent from '@/components/agent/Agent.vue'
 import Customer from '@/components/customer/Customer.vue'
 import Alert from '@/components/alert/Alert.vue'
-Vue.use(Router)
+import TradeDetail from '@/components/tradeDetail/TradeDetail.vue'
+import Feedback from '@/components/feedback/Feedback.vue'
+Vue.use(Router);
 
 export default new Router({
     routes: [
@@ -106,6 +108,16 @@ export default new Router({
             path: '/Alert',
             name: 'Alert',
             component: Alert
+        },
+        {
+            path: '/TradeDetail',
+            name: 'TradeDetail',
+            component: TradeDetail
+        },
+        {
+            path: '/Feedback',
+            name: 'Feedback',
+            component: Feedback
         }
     ]
 })

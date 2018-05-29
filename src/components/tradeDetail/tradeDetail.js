@@ -1,4 +1,7 @@
 /**
+ * Created by Administrator on 2018/5/28 0028.
+ */
+/**
  * Created by Administrator on 2018/5/18 0018.
  */
 import * as J from '../../../static/ajax'
@@ -29,7 +32,8 @@ export default {
             },
             info:{},
             url:[],
-            id:''
+            id:'',
+            types:''
 
         }
     },
@@ -46,11 +50,8 @@ export default {
         var t=this;
         t.swiper();
         t.id=this.$route.params.id;
-        var ajax=new J.A();
-        ajax.ajaxs('/system/wechat/applist',{id:t.id},'GET').then(function (res) {
-            t.info =res.wechat;
-            t.url=res.piclist
-        });
+        t.types=this.$route.params.types
+
 
     },
 

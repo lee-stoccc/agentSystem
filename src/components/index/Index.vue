@@ -11,8 +11,6 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" v-for="l in swiperList"><img :src='l.imgUrl' alt="" :id='l.id'></div>
-                    <!--<div class="swiper-slide"><img src="../../../static/swiper02.jpg" alt=""></div>-->
-                    <!--<div class="swiper-slide"><img src="../../../static/swiper03.jpg" alt=""></div>-->
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@ import Footer from './components/footer/Footer.vue'
 import Alert from './components/alert/Alert.vue'
 import axios from 'axios'
 import '../static/validate.js'
-const URL = 'http://192.168.1.161'
+const URL = 'http://192.168.1.162'
 import SMEditor from 'smeditor'
 import $ from 'jquery'
 

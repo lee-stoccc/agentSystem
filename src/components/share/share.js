@@ -4,17 +4,20 @@
 /**
  * Created by Administrator on 2018/5/18 0018.
  */
-
+import * as J from '../../../static/ajax.js'
 import Qrcode from '@xkeshi/vue-qrcode';
 export default {
     components: {
         Trade: 'Trade',
-        qrcode: Qrcode
+        qrcode: Qrcode,
+
     },
     data () {
         return {
             type: 0,
-            qrcodeUrl:"www.baidu.com"
+            qrcodeUrl:"",
+            codes:'',
+            coin:'',
         }
     },
     methods: {
@@ -29,5 +32,12 @@ export default {
 
     },
     mounted: function () {
+        var t=this;
+        var ajax=new J.A();
+        ajax.ajaxs('/mobileshare',{},'GET').then(function (res) {
+            t.codes=res.code;
+            t.coin=res.coin;
+            t.qrcodeUrl=res.url;
+        })
     }
 }
