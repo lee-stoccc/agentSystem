@@ -10,12 +10,14 @@ export default {
     name:'Index',
     data () {
         return {
-            list:[]
-
+            list:[],
+            isshow:0,
+            cid:'',
+            title:'',
+            content:''
         }
 
     },
-    // 路由传递参数
     methods:{
         swiper () {
             new Swiper('.swiper-container', {
@@ -24,11 +26,24 @@ export default {
                 observer: true
             })
         },
+        response:function (id,title) {
+            let t =this;
+            t.isshow=1;
+            t.cid=id;
+            t.title=title
+        },
+        sub:function () {
+            let t=this;
+            t.isshow=0;
+            let ajax=new J.A();
+            ajax.ajaxs('/blog/bContent/reply',{id:t.cid,content:t.content,title:t.title},'POST').then(function (res) {
+                console.log(res);
+            })
+        }
     },
     mounted:function () {
         let t=this;
         let ajax=new J.A();
-        //轮播图
         ajax.ajaxs('/blog/bContent/list','','GET').then(function (res) {
             console.log(res);
             t.list=res.rows

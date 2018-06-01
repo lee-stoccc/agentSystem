@@ -50,13 +50,13 @@
         <form action="" id="signupForm2">
             <div :style="aid==11?'':'display:none'">
                 <div class="area-2">
-                    名称:<input type="text" name="manageName">
+                    名称:<input type="text" name="miniappName">
                 </div>
                 <div class="area-2">
                     联系电话:   <input type="text" name="managePhone">
                 </div>
                 <div class="area-2">
-                    行业:<input type="text" name="manageVocation">
+                    行业:<input type="text" name="miniappVocation">
                 </div>
                 <div style="display: flex">
                     <div class="area-2 a-3" style="width:37%">

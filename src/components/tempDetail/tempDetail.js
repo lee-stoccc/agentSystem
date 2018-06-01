@@ -29,7 +29,9 @@ export default {
             },
             info:{},
             url:[],
-            id:''
+            id:'',
+            tips:'',
+            show:0
 
         }
     },
@@ -42,13 +44,32 @@ export default {
             })
         },
         //收藏
-        coll:function (gourl,name) {
-            let t =this;
-            let url = window.location.href;
+        coll:function (price,name,url,id,types,gourl) {
+            let t=this;
             let ajax=new J.A();
-            ajax.ajaxs(gourl,{name:name,url:url},'GET').then(function (res) {
-                console.log(res+111)
-            });
+            let datas={
+                id:id,
+                types:types,
+                price:price,
+                name:name,
+                url:url
+            }
+            ajax.ajaxs(gourl,datas,'GET').then(function (res) {
+                if(res.code==0){
+                    t.tips='收藏成功';
+                    t.show=1;
+                    setTimeout(function () {
+                        t.show=0
+                    },2000)
+                }else {
+                    t.tips='已收藏';
+                    t.show=1;
+                    setTimeout(function () {
+                        t.show=0;
+                    },2000)
+                }
+            })
+
         }
     },
     mounted:function () {

@@ -15,6 +15,7 @@ export default {
     },
     methods: {
         show: function(e) {
+            console.log(e)
             if(e.target.dataset.s==1){
                 this.type=1
             }else {
@@ -28,9 +29,9 @@ export default {
     mounted:function (e) {
         var t=this;
         this.id=this.$route.params.id;
-        var ajax =new J.A()
+        var ajax =new J.A();
         ajax.ajaxs('/system/company/getById',{id:this.id},'GET').then(function (res) {
-            console.log(res)
+            console.log(res);
             t.l=res
         })
 

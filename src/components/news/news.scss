@@ -1,0 +1,65 @@
+@mixin m($t:0,$r:0,$b:0,$l:0) {
+  margin-top: $t;
+  margin-right: $r;
+  margin-bottom: $b;
+  margin-left: $l;
+}
+
+@mixin p($t:0,$r:0,$b:0,$l:0) {
+  padding-top: $t;
+  padding-right: $r;
+  padding-bottom: $b;
+  padding-left: $l;
+}
+
+body{
+  display: flex;
+  background-color: #eee;
+  height: 100%;
+}
+.coll {
+  color: #fff;
+  background-color: #25aaff;
+  padding-left: 2rem;
+  line-height: 2.4rem;
+  height: 2.4rem;
+  font-size: 1.4rem;
+  @include m($t: 1rem)
+}
+
+.list {
+  border-radius: 8px;
+  height: 6rem;
+  background-color: white;
+  @include p(0.5rem, 0.5rem, 0.5rem, 0.5rem);
+  @include m(1rem, 1rem, 1rem, 1rem);
+  display: flex;
+  align-items: center;
+  > div:nth-child(1) {
+    @include m($r: 2rem);
+    img{
+      width: 4rem;
+      height: 4rem;
+    }
+
+  }
+  > div:nth-child(2) {
+    flex-grow: 1;
+    div:nth-child(1) {
+      font-size: 1.6rem;
+      color: #333;
+    }
+    div:nth-child(2) {
+      color: #666;
+      height: 2.8rem;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+    }
+    div:nth-child(3) {
+      text-align: right;
+      color: #838282;
+    }
+  }
+}

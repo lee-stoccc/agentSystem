@@ -18,6 +18,8 @@ export default {
             dot:true,
             name:'运营',
             src:'',
+            tips:'',
+            show:0,
             list1:[], //小程序
             list2:[],//广告合作
             list3:[], //合作经营的
@@ -26,25 +28,34 @@ export default {
         }
     },
     methods: {
-        show: function (e) {
+        shows: function (e) {
+            console.log(1231)
+            console.log(e.target.dataset.s)
             this.types = e.target.dataset.s
         },
         choarea:function (e) {
             this.dot=!this.dot;
         },
         chos:function (e) {
+            console.log(e.target.dataset.sid)
             this.dot=!this.dot;
             this.aid=e.target.dataset.sid;
             this.name=e.target.dataset.na;
             this.types=e.target.dataset.sid
         },
-        coll:function (name,id,gourl) {
-            let url = window.location.href;
-            console.log(name,id);
+
+        //收藏功能
+        coll:function (id,types,gourl) {
             let t=this;
             let ajax=new J.A();
-            ajax.ajaxs(gourl,{name:name,url:url},'GET').then(function (res) {
-                console(res)
+            ajax.ajaxs(gourl,{id:id,types:types},'GET').then(function (res) {
+                if(res.code==0){
+                    t.tips='收藏成功';
+                    t.show=1;
+                    setTimeout(function () {
+                        t.show=0
+                    },2000)
+                }
             })
 
         }

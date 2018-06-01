@@ -3,13 +3,13 @@
         <div class="logo"><img src="../../assets/imgs/swiper01.jpg" alt=""></div>
         <div style="margin-bottom: 5rem">
             <div class="type">
-                <div :class="types==1?'cho':'uncho'" @click="show" id="1" data-s="1">小程序</div>
+                <div :class="types==1?'cho':'uncho'" @click="shows" id="1" data-s="1">小程序</div>
                 <div class="colline"></div>
-                <div :class="types==2?'cho':'uncho'" @click="show" id="2" data-s="2">广告合作</div>
+                <div :class="types==2?'cho':'uncho'" @click="shows" id="2" data-s="2">广告合作</div>
                 <div class="colline"></div>
-                <div :class="types==3?'cho':'uncho'" @click="show" id="3" data-s="3">合作经营</div>
+                <div :class="types==3?'cho':'uncho'" @click="shows" id="3" data-s="3">合作经营</div>
                 <div class="colline"></div>
-                <div :class="types==4?'cho':'uncho'" @click="show" id="4" data-s="4" class="cho-list">
+                <div :class="types==4?'cho':'uncho'" @click="shows" id="4" data-s="4" class="cho-list">
                     <div @click="choarea">{{name}}</div>
                     <div><img src="../../assets/imgs/t-3.png" alt="" ></div>
                 </div>
@@ -21,39 +21,39 @@
             <!--小程序-->
             <div class="d-1" :style="types==1?'':'display:none'"
                  v-for="l in list1"
-                 @click="go('TradeDetail',{id:l.id,types:3})">
+                 @click="go('TradeDetail',{id:l.id,types:1})">
                 <div><img :src='l.miniappMainImgurl' alt=""></div>
                 <div>
                     <div class="d-2"><span>{{l.miniappName}}</span><span style="color:#ec3939">￥&nbsp;</span><span
                             style="color:#e82424">{{l.miniappMoney}}</span></div>
-                    <div class="d-2 d-3"><span>小程序类别</span><img src="../../assets/imgs/t-1.png"
+                    <div class="d-2 d-3"><span>{{l.miniappType}}</span><img src="../../assets/imgs/t-1.png"
                                                                 alt="">&nbsp;&nbsp;<span>粉丝：</span><span>{{l.miniappFans}}</span>
                     </div>
                     <div class="d-2 d-3">
                         <img src="../../assets/imgs/tel2.png" alt="">&nbsp;&nbsp;<span>{{l.miniappPhone}}</span>
                         <span class="d-r"></span>
-                        <img src="../../assets/imgs/m-2-1.png" alt="" @click="coll(l.miniappName,'/system/wechat/myCollection')">&nbsp;&nbsp;
+                        <img src="../../assets/imgs/m-2-1.png" alt="" @click.stop="coll(l.id,types,'/system/wechat/myCollection')">&nbsp;&nbsp;
                     </div>
                 </div>
             </div>
             <!--广告和做-->
             <div class="d-1" :style="types==2?'':'display:none'"
                  v-for="l in list2"
-                 @click="go('TradeDetail',{id:l.id,types:1})">
+                 @click="go('TradeDetail',{id:l.id,types:2})">
                 <div><img :src='l.advertisingMainImgurl' alt=""></div>
                 <div>
                     <div class="d-2"><span>{{l.advertisingName}}</span><span style="color:#ec3939" >￥&nbsp;</span><span
                             style="color:#e82424">{{l.advertisingMoney}}</span></div>
                     <div class="d-2"><span style="font-size: 1rem">合作类型:{{l.cooperationType}}</span><span>合作行业:{{l.cooperationBusiness}}</span></div>
                     <div class="d-2 d-3">
-                        <img src="../../assets/imgs/t-2.png" alt="">&nbsp;&nbsp;<span>日活量：</span><span>{{l.active}}</span>
+                        <img src="../../assets/imgs/t-2.png" alt="">&nbsp;&nbsp;<span>日活量：{{l.active}}</span><span>{{l.active}}</span>
                         <span class="d-r"></span>
                         <img src="../../assets/imgs/t-1.png" alt="">&nbsp;&nbsp;<span>粉丝：</span><span>{{l.advertisingFans}}</span>
                     </div>
                     <div class="d-2 d-3">
                         <img src="../../assets/imgs/tel2.png" alt="">&nbsp;&nbsp;<span>{{l.advertisingPhone}}</span>
                         <span class="d-r"></span>
-                        <img src="../../assets/imgs/m-2-1.png" alt="">&nbsp;&nbsp;
+                        <img src="../../assets/imgs/m-2-1.png" alt=""  @click.stop="coll(l.id,types,'/system/wechat/myCollection')">&nbsp;&nbsp;
                     </div>
                 </div>
             </div>
@@ -71,10 +71,9 @@
                     <div class="d-2 d-3">
                         <img src="../../assets/imgs/tel2.png" alt="">&nbsp;&nbsp;<span>{{l.managePhone}}</span>
                         <span class="d-r"></span>
-                        <img src="../../assets/imgs/m-2-1.png" alt="">&nbsp;&nbsp;
+                        <img src="../../assets/imgs/m-2-1.png" alt=""  @click.stop="coll(l.id,types,'/system/wechat/myCollection')">&nbsp;&nbsp;
                     </div>
                 </div>
-
             </div>
             <!--运营商-->
             <div class="d-1" :style="types==4?'':'display:none'"
@@ -90,15 +89,14 @@
                     <div class="d-2 d-3">
                         <img src="../../assets/imgs/tel2.png" alt="">&nbsp;&nbsp;<span>{{l.operatorMoney}}</span>
                         <span class="d-r"></span>
-                        <img src="../../assets/imgs/m-2-1.png" alt="">&nbsp;&nbsp;
+                        <img src="../../assets/imgs/m-2-1.png" alt=""  @click.stop="coll(l.id,types,'/system/wechat/myCollection')">&nbsp;&nbsp;
                     </div>
                 </div>
             </div>
-
             <!--商家-->
             <div class="d-1" :style="types==5?'':'display:none'"
                  v-for="l in list5"
-                 @click="go('TradeDetail',{id:l.id,types:4})">
+                 @click="go('TradeDetail',{id:l.id,types:5})">
                 <div><img :src='l.merchantMainImgurl' alt=""></div>
                 <div>
                     <div class="d-2"><span>{{l.merchantName}}</span><span style="color:#ec3939">￥&nbsp;</span><span
@@ -109,11 +107,12 @@
                     <div class="d-2 d-3">
                         <img src="../../assets/imgs/tel2.png" alt="">&nbsp;&nbsp;<span>{{l.merchantPhone}}</span>
                         <span class="d-r"></span>
-                        <img src="../../assets/imgs/m-2-1.png" alt="">&nbsp;&nbsp;
+                        <img src="../../assets/imgs/m-2-1.png" alt=""  @click.stop="coll(l.id,types,'/system/wechat/myCollection')">&nbsp;&nbsp;
                     </div>
                 </div>
             </div>
         </div>
+        <Alert :tips='tips' :show="show"></Alert>
         <Footer :type="type"></Footer>
     </div>
 </template>

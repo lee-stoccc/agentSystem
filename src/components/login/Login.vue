@@ -13,7 +13,6 @@
                     <div><img src="../../assets/imgs/l-1.png" alt=""></div>
                 </div>
                 <div class="ainput">
-
                     <input type="text" placeholder="请输入密码" v-model="password">
                     <div><img src="../../assets/imgs/l-2.png" alt=""></div>
                 </div>

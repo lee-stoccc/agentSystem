@@ -11,19 +11,21 @@
   padding-bottom: $b;
   padding-left: $l;
 }
-
-.tip{
-  position: fixed;
-  width: 50%;
-  left: 25%;
-  background-color: #eee;
-  color: #25aaff;
-  height: 5rem;
-  top: 33%;
+.title{
   text-align: center;
-  line-height: 5rem;
-  border-radius: 10px;
-  z-index: 3;
-  font-size: 1.8rem;
-  border: 1px solid #25aaff;
+  font-size: 2rem;
+  @include p($t:1rem,$b:1rem)
+}
+
+.img{
+  width: 100%;
+  height: 16rem;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+.text{
+  @include p($l:2rem,$r:1rem,$t:1rem);
+  word-wrap:break-word
 }

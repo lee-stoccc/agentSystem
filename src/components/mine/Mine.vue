@@ -3,7 +3,7 @@
         <div class="top">
             <div class="img">
                 <div :style="login==1?'':'display :none'"><img src="../../assets/imgs/1-1.png" alt=""></div>
-                <div :style="login==1?'':'display :none'">退出</div>
+                <div :style="login==1?'':'display :none'"></div>
                 <div style="height: 5rem;line-height: 5rem;margin-right: 1rem" :style="login==1?'display :none':''" @click="go('Login')">登录</div>
             </div>
             <div class="img-2">
@@ -73,10 +73,15 @@
             <div @click="go('Notify')" style="position: relative">
                 <div><img src="../../assets/imgs/msg.png" alt="" ></div>
                 <div>我的消息</div>
-                <div class="msg">1</div>
+                <div class="msg" :style="isRead==0?'display:none':''">{{isRead}}</div>
             </div>
-
+            <div  style="position: relative">
+                <div><img src="../../assets/imgs/m-3-5.png" alt="" ></div>
+                <div>我要投诉</div>
+                <div class="msg" :style="isRead==0?'display:none':''">{{isRead}}</div>
+            </div>
         </div>
+        <!--<div class="certificate"><img src="../../assets/imgs/certificate.png" alt=""></div>-->
         <Footer :type="type"></Footer>
     </div>
 </template>

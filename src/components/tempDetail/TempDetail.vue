@@ -10,9 +10,10 @@
         <div class="name">{{info.name}}</div>
         <div class="price"><span>￥</span> <span>{{info.price}}</span>
             <img alt="" v-for="l in url" src="../../../src/assets/imgs/m-2-1.png"
-                 @click="coll('/system/wechat/myCollection',info.name)"></div>
+                 @click="coll(info.price,info.name,info.url,info.id,0,'/system/wechat/myCollection')"></div>
         <div class="blue">商品详情</div>
         <div class="detail">{{info.description}}</div>
+        <Alert :tips="tips" :show="show"></Alert>
         <Footer></Footer>
     </div>
 

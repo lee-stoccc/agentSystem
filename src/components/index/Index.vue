@@ -16,7 +16,7 @@
         </div>
         <!--类别-->
         <div class="category">
-            <div>
+            <div @click="go('News')">
                 <div><img src="../../assets/imgs/1-1.png" alt=""></div>
                 <div>新闻</div>
             </div>

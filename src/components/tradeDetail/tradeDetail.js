@@ -33,7 +33,17 @@ export default {
             info:{},
             url:[],
             id:'',
-            types:''
+            types:'',
+            list1:[],   //小程序
+            list1_pic:[],
+            list2_pic:[],  // 广告
+            list2:[],
+            list3:[],   // 合作运营
+            list3_pic:'',
+            list4:[],    //运营商
+            list4_pic:[],
+            list5:[],    //运营商
+            list5_pic:[],
 
         }
     },
@@ -45,13 +55,93 @@ export default {
                 observer: true
             })
         },
+        //收藏功能
+        coll:function (id,types,gourl) {
+            console.log(124123);
+            let t=this;
+            let ajax=new J.A();
+            let datas={
+                id:id,
+                types:types,
+                price:0,
+                name:0,
+                url:0
+            }
+            ajax.ajaxs(gourl,datas,'GET').then(function (res) {
+                if(res.code==0){
+                    t.tips='收藏成功';
+                    t.show=1;
+                    setTimeout(function () {
+                        t.show=0
+                    },2000)
+                }
+            })
+
+        }
     },
     mounted:function () {
-        var t=this;
-        t.swiper();
+        let t=this;
         t.id=this.$route.params.id;
-        t.types=this.$route.params.types
+        t.types=this.$route.params.types;
+        var ajax=new J.A();
+        console.log(t.types);
 
+        // switch (t.types){
+        //     case 3:
+        //        var url='miniappDetails';  //小程序
+        //         break;
+        //     case 1:
+        //          url='advertising';  // 广告合作
+        //         break;
+        //     case 3:
+        //          url='manage';
+        //         break;
+        //     case 4:
+        //          url='operator';
+        //         break;
+        //     case 5:
+        //          url='merchant';
+        //         break;
+        //
+        // }
+        //     ajax.ajaxs('/system/'+url+'/detailsPage',{id:t.id},'GET').then(function (rex) {
+        //         t.list1=rex+'.'+url;
+        //         t.list2=rex.piclist;
+        //         console.log(rex);
+        //         console.log(t.list1);
+        //         console.log(t.list2)
+        //     })
+
+
+        // 小程序
+        ajax.ajaxs('/system/miniappDetails/detailsPage',{id:t.id},'GET').then(function (rex) {
+                t.list1=rex.miniappDetails;
+                t.list1_pic=rex.piclist
+        });
+
+        // 广告
+        ajax.ajaxs('/system/advertising/detailsPage',{id:t.id},'GET').then(function (rex) {
+            t.list2=rex.advertising;
+            t.list2_pic=rex.piclist
+        })
+
+        // 合作运营
+        ajax.ajaxs('/system/manage/detailsPage',{id:t.id},'GET').then(function (rex) {
+            t.list3=rex.manage;
+            t.list3_pic=rex.piclist
+        });
+
+        // 运营商
+        ajax.ajaxs('/system/operator/detailsPage',{id:t.id},'GET').then(function (rex) {
+            t.list4=rex.operator;
+            t.list4_pic=rex.piclist
+        })
+
+        // 商家
+        ajax.ajaxs('/system/merchant/detailsPage',{id:t.id},'GET').then(function (rex) {
+            t.list5=rex.operator;
+            t.list5_pic=rex.piclist
+        })
 
     },
 

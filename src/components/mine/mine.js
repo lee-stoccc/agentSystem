@@ -14,7 +14,9 @@ export default {
             type:3,
             login:0,
             state:'登录',
-            info:{}
+            info:{},
+            list:[],
+            isRead:0
         }
     },
     methods:{
@@ -22,12 +24,26 @@ export default {
             var t=this;
             var ajax=new J.A();
             ajax.ajaxs('/sys/user/appPersonal',{},'GET').then(function (res) {
-                t.info=res
+                if(res=='no'){
+                    t.login=0
+                }
+                t.info=res;
+                t.login=1
             })
         }
     },
     mounted:function () {
-        var t=this;
-        t.Userinfo()
+        let t=this;
+        t.Userinfo();
+        let ajax=new J.A();
+
+        ajax.ajaxs('/oa/notify/selfList',{},'GET').then(function (res) {
+            t.list=res.rows;
+            for (let ii=0;ii<res.rows.length;ii++){
+                if(res.rows[ii].isRead==0){
+                    t.isRead++;
+                }
+            }
+        })
     }
 }
