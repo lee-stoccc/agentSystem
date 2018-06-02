@@ -63,9 +63,9 @@
                  @click="go('TradeDetail',{id:l.id,types:3})">
                 <div><img :src='l.manageMainImgurl' alt=""></div>
                 <div>
-                    <div class="d-2"><span>{{l.miniappName}}</span><span style="color:#ec3939">￥&nbsp;</span><span
+                    <div class="d-2"><span>{{l.manageName}}</span><span style="color:#ec3939">￥&nbsp;</span><span
                             style="color:#e82424">{{l.manageMoney}}</span></div>
-                    <div class="d-2 d-3"><span>{{l.miniappVocation}}</span><img src="../../assets/imgs/t-1.png"
+                    <div class="d-2 d-3"><span>{{l.manageVocation}}</span><img src="../../assets/imgs/t-1.png"
                                                                 alt="">&nbsp;&nbsp;<span>粉丝：</span><span>{{l.manageFans}}</span>
                     </div>
                     <div class="d-2 d-3">

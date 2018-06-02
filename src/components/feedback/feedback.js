@@ -37,7 +37,7 @@ export default {
             t.isshow=0;
             let ajax=new J.A();
             ajax.ajaxs('/blog/bContent/reply',{id:t.cid,content:t.content,title:t.title},'POST').then(function (res) {
-                console.log(res);
+                res.code==0?t.content='':''
             })
         }
     },

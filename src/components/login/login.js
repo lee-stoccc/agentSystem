@@ -12,7 +12,8 @@ export default {
             time:'获取验证码',
             isDisable:false,
             sms_num:'',
-            smsphone:""
+            smsphone:"",
+            isshow:''
         }
     },
     methods: {
@@ -35,9 +36,12 @@ export default {
                     if(res.code==0){
                         t.show=1;
                         t.tips='登录成功';
+                        ajax.ajaxs('/mobileIndex',{},'GET').then(function (res) {
+                            t.isshow=res.msg
+                        });
                         setTimeout(function () {
                             t.show=0;
-                            t.go('Index')
+                            t.go('Index',{isshow:t.isshow})
                         },2000);
 
                     }
@@ -59,9 +63,12 @@ export default {
                     if(res.code==0){
                         t.show=1;
                         t.tips='登录成功';
+                        ajax.ajaxs('/mobileIndex',{},'GET').then(function (res) {
+                            t.isshow=res.msg
+                        });
                         setTimeout(function () {
                             t.show=0;
-                            t.go('Index')
+                            t.go('Index',{isshow:t.isshow})
                         },2000);
 
                     }

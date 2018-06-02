@@ -1,0 +1,90 @@
+@mixin m($t:0,$r:0,$b:0,$l:0) {
+  margin-top: $t;
+  margin-right: $r;
+  margin-bottom: $b;
+  margin-left: $l;
+}
+
+@mixin p($t:0,$r:0,$b:0,$l:0) {
+  padding-top: $t;
+  padding-right: $r;
+  padding-bottom: $b;
+  padding-left: $l;
+}
+
+
+.bg{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color:#999999;
+  opacity: 0.7;
+  position: fixed;
+  width: 100%;
+}
+.call{
+  position: fixed;
+  width: 90%;
+  left: 5%;
+  top: 10%;
+  border-radius: 10px;
+  height: 30rem;
+  background-color: white;
+  textarea{
+    width: 90%;
+    position: relative;
+    left: 3%;
+    height: 8rem;
+    @include m(0.4rem,0,0.4rem,0);
+    @include p(0.8rem,0,0.4rem,0.8rem);
+    border: 1px solid #EEe;
+    outline:none;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+}
+.welcome{
+  @include p(1.2rem,1.2rem,1rem,1.2rem)
+}
+.address{
+  @extend .welcome;
+  font-size: 1.7rem;
+}
+
+#example{
+  display: flex;
+  justify-content: space-around;
+}
+select{
+  @include p(4px,4px,4px,4px);
+  border: #eee 1px solid;
+  background-color: white;
+  border-radius: 6px;
+  color: #666;
+}
+.add1{
+  @extend .address
+}
+.add2{
+  @include p($l:1.6rem);
+  input{
+    height: 2.4rem;
+    line-height: 2.4rem;
+    width: 20rem;
+    border-radius: 6px;
+    border: #eee 1px solid;
+  }
+}
+.sub{
+  text-align: center;
+  background-color: #25aaff;
+  color: white;
+  border-radius: 6px;
+  position: relative;
+  width: 30%;
+  left: 35%;
+  @include m($t:1.6rem);
+  height: 2.4rem;
+  line-height: 2.4rem;
+  font-size: 1.4rem;
+}

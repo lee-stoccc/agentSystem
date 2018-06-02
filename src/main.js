@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Footer from './components/footer/Footer.vue'
+import AlertInput from './components/alertInput/AlertInput.vue'
 import Alert from './components/alert/Alert.vue'
 import axios from 'axios'
 import '../static/validate.js'
@@ -17,6 +18,7 @@ Vue.prototype.$axios = axios;
 Vue.component('Footer', Footer);
 Vue.component('Alert', Alert);
 Vue.component('SMEditor', SMEditor);
+Vue.component('AlertInput', AlertInput);
 Vue.config.productionTip = false;
 //封装的路由跳转函数
 Vue.prototype.go = function (name, params) {

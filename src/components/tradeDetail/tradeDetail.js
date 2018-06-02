@@ -34,15 +34,15 @@ export default {
             url:[],
             id:'',
             types:'',
-            list1:[],   //小程序
+            list1:'',   //小程序
             list1_pic:[],
             list2_pic:[],  // 广告
-            list2:[],
-            list3:[],   // 合作运营
+            list2:'',
+            list3:'',   // 合作运营
             list3_pic:'',
-            list4:[],    //运营商
+            list4:'',    //运营商
             list4_pic:[],
-            list5:[],    //运营商
+            list5:'',    //运营商
             list5_pic:[],
 
         }
@@ -116,31 +116,36 @@ export default {
         // 小程序
         ajax.ajaxs('/system/miniappDetails/detailsPage',{id:t.id},'GET').then(function (rex) {
                 t.list1=rex.miniappDetails;
+                t.list1==null?t.list1='':'';
                 t.list1_pic=rex.piclist
         });
 
         // 广告
         ajax.ajaxs('/system/advertising/detailsPage',{id:t.id},'GET').then(function (rex) {
             t.list2=rex.advertising;
+            t.list2==null?t.list2='':'';
             t.list2_pic=rex.piclist
         })
 
         // 合作运营
         ajax.ajaxs('/system/manage/detailsPage',{id:t.id},'GET').then(function (rex) {
             t.list3=rex.manage;
-            t.list3_pic=rex.piclist
+            t.list3_pic=rex.piclist;
+            t.list3==null?t.list3='':'';
         });
 
         // 运营商
         ajax.ajaxs('/system/operator/detailsPage',{id:t.id},'GET').then(function (rex) {
             t.list4=rex.operator;
-            t.list4_pic=rex.piclist
+            t.list4_pic=rex.piclist;
+            t.list4==null?t.list4='':'';
         })
 
         // 商家
         ajax.ajaxs('/system/merchant/detailsPage',{id:t.id},'GET').then(function (rex) {
-            t.list5=rex.operator;
-            t.list5_pic=rex.piclist
+            t.list5=rex.merchant;
+            t.list5_pic=rex.piclist;
+            t.list5==null?t.list5='':'';
         })
 
     },

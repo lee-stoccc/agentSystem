@@ -27,7 +27,8 @@ export default {
                 debugger: true,
             },
             swiperList:[],
-            picUrl:[]
+            picUrl:[],
+            isshow:"1"
 
 
         }
@@ -42,18 +43,32 @@ export default {
                 observer: true
             })
         },
+        sub:function () {
+            let ajax=new J.A();
+            let datas={
+                liveAddress:this.address_de,
+                province:this.prov,
+                city:this.city,
+                district:this.district
+            };
+            ajax.ajaxs('sys/user/saveAddress',datas,'POST').then(function (res) {
+                console.log(res)
+            })
+        }
     },
     mounted:function () {
         console.log(this);
         this.swiper();
         let t=this;
         let ajax=new J.A();
+        t.isshow=this.$route.params.isshow;
+
         //轮播图
-        ajax.ajaxs('/system/sowingmap/list','','GET').then(function (res) {
+        ajax.ajaxs('/system/sowingmap/lunbolist',{},'GET').then(function (res) {
             t.swiperList=res.rows
         })
         //图片
-        ajax.ajaxs('/common/sysFile/list','','GET').then(function (res) {
+        ajax.ajaxs('/system/sowingmap//homepagelist',{},'GET').then(function (res) {
             t.picUrl=res.rows
         })
     },

@@ -75,10 +75,10 @@
                 <div>我的消息</div>
                 <div class="msg" :style="isRead==0?'display:none':''">{{isRead}}</div>
             </div>
-            <div  style="position: relative">
+            <div  style="position: relative" @click="go('Complaint')">
                 <div><img src="../../assets/imgs/m-3-5.png" alt="" ></div>
                 <div>我要投诉</div>
-                <div class="msg" :style="isRead==0?'display:none':''">{{isRead}}</div>
+                <!--<div class="msg" :style="isRead==0?'display:none':''">{{isRead}}</div>-->
             </div>
         </div>
         <!--<div class="certificate"><img src="../../assets/imgs/certificate.png" alt=""></div>-->

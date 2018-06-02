@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="position: relative">
         <!--搜索区-->
         <!--<div class="ban">-->
             <!--<div><img src="../../assets/imgs/for.png" alt=""></div>-->
@@ -66,10 +66,12 @@
 
         <div class="temp" >
             <div v-for="l in picUrl">
-                <div :id='l.id'><img :src='l.url' alt=""></div>
+                <div :id='l.id'><img :src='l.imgUrl' alt=""></div>
             </div>
-
         </div>
+
+
+        <AlertInput  class="alertinptu" :isshow="isshow" :showInput="isshow" ></AlertInput>
 
         <Footer :type="type"></Footer>
     </div>

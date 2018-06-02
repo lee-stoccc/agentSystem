@@ -1,0 +1,72 @@
+@mixin m($t:0,$r:0,$b:0,$l:0) {
+  margin-top: $t;
+  margin-right: $r;
+  margin-bottom: $b;
+  margin-left: $l;
+}
+
+@mixin p($t:0,$r:0,$b:0,$l:0) {
+  padding-top: $t;
+  padding-right: $r;
+  padding-bottom: $b;
+  padding-left: $l;
+}
+
+body{
+  display: flex;
+  background-color: #eee;
+  height: 100%;
+}
+.coll {
+  color: #fff;
+  background-color: #25aaff;
+  padding-left: 2rem;
+  line-height: 2.4rem;
+  height: 2.4rem;
+  font-size: 1.4rem;
+  @include m($t: 1rem)
+}
+
+
+
+.call{
+  left: 5%;
+  top: 40%;
+  border-radius: 10px;
+  height: 16rem;
+  background-color: white;
+  textarea{
+    width: 90%;
+    position: relative;
+    left: 3%;
+    height: 8rem;
+    @include m(0.4rem,0,0.4rem,0);
+    @include p(0.8rem,0,0.4rem,0.8rem);
+    border: 1px solid #EEe;
+    outline:none;
+    border-radius: 8px;
+
+    font-size: 1rem;
+  }
+}
+
+.bg{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color:#999999;
+  opacity: 0.7;
+}
+.sub{
+  text-align: center;
+  background-color: #25aaff;
+  color: white;
+  border-radius: 6px;
+  position: relative;
+  width: 30%;
+  left: 35%;
+  @include m($t:1.6rem);
+  height: 2.4rem;
+  line-height: 2.4rem;
+  font-size: 1.4rem;
+}

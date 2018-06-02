@@ -21,6 +21,8 @@ import Feedback from '@/components/feedback/Feedback.vue'
 import Notify from '@/components/notify/Notify.vue'
 import News from '@/components/news/News.vue'
 import NewDetail from '@/components/newDetail/NewDetail.vue'
+import AlertInput from '@/components/alertInput/AlertInput.vue'
+import Complaint from '@/components/complaint/Complaint.vue'
 Vue.use(Router);
 
 export default new Router({
@@ -137,5 +139,18 @@ export default new Router({
             name: 'NewDetail',
             component: NewDetail
         }
+        ,
+        {
+            path: '/AlertInput',
+            name: 'AlertInput',
+            component: AlertInput
+        }
+        ,
+        {
+            path: '/Complaint',
+            name: 'Complaint',
+            component: Complaint
+        }
+
     ]
 })
