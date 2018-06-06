@@ -40,7 +40,7 @@
                 <div class="swipera car">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide" v-for="l in list2_pic"><img :src='l.imgUrl' alt="" :id='l.id'></div>
+                            <div class="swiper-slide" v-for="l in list2_pic"><img :src='l' alt="" :id='l.id'></div>
                         </div>
                     </div>
                 </div>
@@ -159,7 +159,8 @@
         </div>
     </div>
 </template>
-
+<link rel="stylesheet" href="/static/swiper.min.css"/>
+<script src="/static/swiper.min.js"></script>
 <script src="./tradeDetail.js">
 
 </script>

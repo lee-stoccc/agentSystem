@@ -80,6 +80,7 @@ export default {
         }
     },
     mounted:function () {
+        this.swiper()
         let t=this;
         t.id=this.$route.params.id;
         t.types=this.$route.params.types;
@@ -114,7 +115,7 @@ export default {
 
 
         // 小程序
-        ajax.ajaxs('/system/miniappDetails/detailsPage',{id:t.id},'GET').then(function (rex) {
+        ajax.ajaxs('/system/miniappDetails/detailsPage',{appId:t.id},'GET').then(function (rex) {
                 t.list1=rex.miniappDetails;
                 t.list1===null?t.list1='':'';
                 rex.miniappDetails.miniappDetailsImgurl1!==null?t.list1_pic.push(rex.miniappDetails.miniappDetailsImgurl1):'';
@@ -124,7 +125,7 @@ export default {
         });
 
         // 广告
-        ajax.ajaxs('/system/advertising/detailsPage',{id:t.id},'GET').then(function (rex) {
+        ajax.ajaxs('/system/advertising/detailsPage',{appId:t.id},'GET').then(function (rex) {
             t.list2=rex.advertising;
             t.list2==null?t.list2='':'';
             rex.advertising.advertisingDetailsImgurl1!==null?t.list2_pic.push(rex.advertising.advertisingDetailsImgurl1):'';
@@ -135,7 +136,7 @@ export default {
         })
 
         // 合作运营
-        ajax.ajaxs('/system/manage/detailsPage',{id:t.id},'GET').then(function (rex) {
+        ajax.ajaxs('/system/manage/detailsPage',{appId:t.id},'GET').then(function (rex) {
             t.list3=rex.manage;
             t.list3==null?t.list3='':'';
             rex.manage.manageDetailsImgurl1!==null?t.list3_pic.push(rex.manage.manageDetailsImgurl1):'';
@@ -146,7 +147,7 @@ export default {
         });
 
         // 运营商
-        ajax.ajaxs('/system/operator/detailsPage',{id:t.id},'GET').then(function (rex) {
+        ajax.ajaxs('/system/operator/detailsPage',{appId:t.id},'GET').then(function (rex) {
             t.list4=rex.operator;
             t.list4==null?t.list4='':'';
             rex.operator.operatorDetailsImgurl1!==null?t.list4_pic.push(rex.operator.operatorDetailsImgurl1):'';
@@ -157,7 +158,7 @@ export default {
         })
 
         // 商家
-        ajax.ajaxs('/system/merchant/detailsPage',{id:t.id},'GET').then(function (rex) {
+        ajax.ajaxs('/system/merchant/detailsPage',{appId:t.id},'GET').then(function (rex) {
             t.list5=rex.merchant;
             t.list5==null?t.list5='':'';
             rex.merchant.merchantDetailsImgurl1!==null?t.list5_pic.push(rex.merchant.merchantDetailsImgurl1):'';

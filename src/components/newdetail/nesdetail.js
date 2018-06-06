@@ -7,7 +7,7 @@ export default {
     data () {
         return {
             info:{},
-            isnotify:false,
+            isnotify:0,
             info2:{}
         }
     },
@@ -19,15 +19,14 @@ export default {
         let id = this.$route.params.id;
         console.log(id);
         ajax.ajaxs('/system/news/applist',{id:id},'GET').then(function (res) {
-            console.log(res);
-            t.info=res
+            t.info=res;
+            t.isnotify=0
         })
 
 
         ajax.ajaxs('/oa/notify/readmobile',{id:id},'GET').then(function (res) {
-            console.log(res);
-            t.info2=res;
-            t.notify=true
+            t.info2=res.msg;
+            t.isnotify=1
         })
     },
 

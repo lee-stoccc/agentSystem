@@ -77,7 +77,7 @@ export default {
         t.swiper();
         t.id=this.$route.params.id;
         var ajax=new J.A();
-        ajax.ajaxs('/system/wechat/applist',{id:t.id},'GET').then(function (res) {
+        ajax.ajaxs('/system/wechat/applist',{appId:t.id},'GET').then(function (res) {
             t.info =res.wechat;
             t.url=res.piclist
         });

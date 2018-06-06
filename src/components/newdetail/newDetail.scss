@@ -29,3 +29,7 @@
   @include p($l:2rem,$r:1rem,$t:1rem);
   word-wrap:break-word
 }
+.title2{
+  text-align: center;
+  @include m($t:1rem)
+}
