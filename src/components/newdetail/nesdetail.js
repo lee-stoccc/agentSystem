@@ -6,7 +6,9 @@ export default {
     },
     data () {
         return {
-            info:{}
+            info:{},
+            isnotify:false,
+            info2:{}
         }
     },
     methods: {
@@ -19,6 +21,13 @@ export default {
         ajax.ajaxs('/system/news/applist',{id:id},'GET').then(function (res) {
             console.log(res);
             t.info=res
+        })
+
+
+        ajax.ajaxs('/oa/notify/readmobile',{id:id},'GET').then(function (res) {
+            console.log(res);
+            t.info2=res;
+            t.notify=true
         })
     },
 

@@ -4,7 +4,7 @@
         <div>
             <!--小程序-->
             <div class="d-1" :style="type==1?'':'display:none'"
-                 v-for="l in list" :id='l.appid' @click="godetail(l.appid,l.types)">
+                 v-for="l in list" :id='l.appId' @click="godetail(l.appId,l.types)">
                 <div><img :src='l.url' alt=""></div>
                 <div>
                     <div class="d-2"><span>{{l.name}}</span><span style="color:#ec3939">￥&nbsp;</span><span

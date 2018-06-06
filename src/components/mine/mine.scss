@@ -56,12 +56,15 @@
   span{
     color:#ff5501 ;
   }
-  div{
-    width: 33%;
+  >div{
     @include p($r:0.7rem);
     border-right: solid #eee 1px;
     height: 2rem;
     line-height: 2rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: .6rem;
   }
   img{
     width: 1.2rem;

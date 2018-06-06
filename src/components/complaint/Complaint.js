@@ -20,7 +20,7 @@ export default {
             let t=this;
             t.isshow=0;
             let ajax=new J.A();
-            ajax.ajaxs('/blog/bContent/save',{icontent:t.content,title:'投诉通知',author:t.author},'POST').then(function (res) {
+            ajax.ajaxs('/blog/bContent/save',{content:t.content,title:'投诉通知',author:t.author},'POST').then(function (res) {
                 if(res.code==0){
                     t.show=1;
                     t.tips='提交成功';
@@ -36,7 +36,7 @@ export default {
     mounted:function () {
         let t=this;
         let ajax=new J.A();
-        ajax.ajaxs('/blog/bContent/mobileadd','GET').then(function (res) {
+        ajax.ajaxs('/blog/bContent/mobileadd',{},'GET').then(function (res) {
            t.author=res.msg
         })
     },

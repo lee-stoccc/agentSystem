@@ -13,18 +13,18 @@
                     <div><img src="../../assets/imgs/l-1.png" alt=""></div>
                 </div>
                 <div class="ainput">
-                    <input type="text" placeholder="请输入密码" v-model="password">
+                    <input type="password" placeholder="请输入密码" v-model="password" >
                     <div><img src="../../assets/imgs/l-2.png" alt=""></div>
                 </div>
                 <div class=" sign" @click="login">
                     马上登录
                 </div>
                 <div class="category">
-                    <div>
+                    <div> <a href="http://www.suyongw.com" style="text-decoration:none;color: #333">
                         <div><img src="../../assets/imgs/l-3.png" alt=""></div>
-                        <div>官网链接</div>
+                        <div>官网链接</div></a>
                     </div>
-                    <div>
+                    <div @click="go('Regist')">
                         <div><img src="../../assets/imgs/l-4.png" alt=""></div>
                         <div>快速注册</div>
                     </div>
@@ -50,15 +50,17 @@
                 </div>
                 <div class="category">
                     <div>
+                        <a href="http://www.suyongw.com" style="text-decoration:none;color: #333">
                         <div><img src="../../assets/imgs/l-3.png" alt=""></div>
                         <div>官网链接</div>
+                        </a>
                     </div>
                     <div @click="go('Regist')">
-                        <div><img src="../../assets/imgs/l-4.png" alt=""></div>
+                        <div><img src="../../assets/imgs/l-4.png" alt="" ></div>
                         <div>快速注册</div>
                     </div>
                     <div>
-                        <div><img src="../../assets/imgs/l-5.png" alt=""></div>
+                        <div><img src="../../assets/imgs/l-5.png" alt="" ></div>
                         <div>找回密码</div>
                     </div>
                 </div>

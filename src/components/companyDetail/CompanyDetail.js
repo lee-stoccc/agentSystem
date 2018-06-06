@@ -10,7 +10,7 @@ export default {
             msg: 'Welcome to Your Vue.js App',
             type:1,
             id:'',
-            l:''
+            l:'',
         }
     },
     methods: {
@@ -34,6 +34,7 @@ export default {
             console.log(res);
             t.l=res
         })
+
 
     }
 }

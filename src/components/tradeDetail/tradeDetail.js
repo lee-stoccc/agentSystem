@@ -42,7 +42,7 @@ export default {
             list3_pic:'',
             list4:'',    //运营商
             list4_pic:[],
-            list5:'',    //运营商
+            list5:'',    //商家
             list5_pic:[],
 
         }
@@ -116,36 +116,54 @@ export default {
         // 小程序
         ajax.ajaxs('/system/miniappDetails/detailsPage',{id:t.id},'GET').then(function (rex) {
                 t.list1=rex.miniappDetails;
-                t.list1==null?t.list1='':'';
-                t.list1_pic=rex.piclist
+                t.list1===null?t.list1='':'';
+                rex.miniappDetails.miniappDetailsImgurl1!==null?t.list1_pic.push(rex.miniappDetails.miniappDetailsImgurl1):'';
+                rex.miniappDetails.miniappDetailsImgurl2!==null?t.list1_pic.push(rex.miniappDetails.miniappDetailsImgurl2):'';
+                rex.miniappDetails.miniappDetailsImgurl3!==null?t.list1_pic.push(rex.miniappDetails.miniappDetailsImgurl3):'';
+                rex.miniappDetails.miniappDetailsImgurl4!==null?t.list1_pic.push(rex.miniappDetails.miniappDetailsImgurl4):'';
         });
 
         // 广告
         ajax.ajaxs('/system/advertising/detailsPage',{id:t.id},'GET').then(function (rex) {
             t.list2=rex.advertising;
             t.list2==null?t.list2='':'';
-            t.list2_pic=rex.piclist
+            rex.advertising.advertisingDetailsImgurl1!==null?t.list2_pic.push(rex.advertising.advertisingDetailsImgurl1):'';
+            rex.advertising.advertisingDetailsImgurl2!==null?t.list2_pic.push(rex.advertising.advertisingDetailsImgurl2):'';
+            rex.advertising.advertisingDetailsImgurl3!==null?t.list2_pic.push(rex.advertising.advertisingDetailsImgurl3):'';
+            rex.advertising.advertisingDetailsImgurl4!==null?t.list2_pic.push(rex.advertising.advertisingDetailsImgurl4):'';
+
         })
 
         // 合作运营
         ajax.ajaxs('/system/manage/detailsPage',{id:t.id},'GET').then(function (rex) {
             t.list3=rex.manage;
-            t.list3_pic=rex.piclist;
             t.list3==null?t.list3='':'';
+            rex.manage.manageDetailsImgurl1!==null?t.list3_pic.push(rex.manage.manageDetailsImgurl1):'';
+            rex.manage.manageDetailsImgurl2!==null?t.list3_pic.push(rex.manage.manageDetailsImgurl2):'';
+            rex.manage.manageDetailsImgurl3!==null?t.list3_pic.push(rex.manage.manageDetailsImgurl3):'';
+            rex.manage.manageDetailsImgurl4!==null?t.list3_pic.push(rex.manage.manageDetailsImgurl4):'';
+
         });
 
         // 运营商
         ajax.ajaxs('/system/operator/detailsPage',{id:t.id},'GET').then(function (rex) {
             t.list4=rex.operator;
-            t.list4_pic=rex.piclist;
             t.list4==null?t.list4='':'';
+            rex.operator.operatorDetailsImgurl1!==null?t.list4_pic.push(rex.operator.operatorDetailsImgurl1):'';
+            rex.operator.operatorDetailsImgurl2!==null?t.list4_pic.push(rex.operator.operatorDetailsImgurl2):'';
+            rex.operator.operatorDetailsImgurl3!==null?t.list4_pic.push(rex.operator.operatorDetailsImgurl3):'';
+            rex.operator.operatorDetailsImgurl4!==null?t.list4_pic.push(rex.operator.operatorDetailsImgurl4):'';
+
         })
 
         // 商家
         ajax.ajaxs('/system/merchant/detailsPage',{id:t.id},'GET').then(function (rex) {
             t.list5=rex.merchant;
-            t.list5_pic=rex.piclist;
             t.list5==null?t.list5='':'';
+            rex.merchant.merchantDetailsImgurl1!==null?t.list5_pic.push(rex.merchant.merchantDetailsImgurl1):'';
+            rex.merchant.merchantDetailsImgurl2!==null?t.list5_pic.push(rex.merchant.merchantDetailsImgurl2):'';
+            rex.merchant.merchantDetailsImgurl3!==null?t.list5_pic.push(rex.merchant.merchantDetailsImgurl3):'';
+            rex.merchant.merchantDetailsImgurl4!==null?t.list5_pic.push(rex.merchant.merchantDetailsImgurl4):'';
         })
 
     },

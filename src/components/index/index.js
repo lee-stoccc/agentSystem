@@ -3,39 +3,49 @@
  */
 import * as J from '../../../static/ajax.js'
 import Swiper from '../../../static/swiper.min.js'
+import $ from 'jquery'
+
 export default {
-    name:'Index',
+    name: 'Index',
     data () {
         return {
             msg: 'Welcome to Your Vue.js App',
-            type:1,
+            type: 1,
             swiperOption: {//以下配置不懂的，可以去swiper官网看api，链接http://www.swiper.com.cn/api/
                 // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，<br>　　　　　　　　假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
                 notNextTick: true,
                 // swiper configs 所有的配置同swiper官方api配置
                 autoplay: 3000,
-                direction : 'horizontal',
-                grabCursor : true,
-                setWrapperSize :true,
+                direction: 'horizontal',
+                grabCursor: true,
+                setWrapperSize: true,
                 autoHeight: true,
-                pagination : '.swiper-pagination',
-                paginationClickable :true,
-                scrollbar:'.swiper-scrollbar',//滚动条
-                mousewheelControl : true,
-                observeParents:true,
+                pagination: '.swiper-pagination',
+                paginationClickable: true,
+                scrollbar: '.swiper-scrollbar',//滚动条
+                mousewheelControl: true,
+                observeParents: true,
                 // 如果自行设计了插件，那么插件的一些配置相关参数，也应该出现在这个对象中，如下debugger
                 debugger: true,
             },
-            swiperList:[],
-            picUrl:[],
-            isshow:"1"
-
-
+            swiperList: [],
+            picUrl: [],
+            isshow: "1",
+            address_detail: null, //详细地址
+            userlocation: {lng: "", lat: ""},
+            value: '',
+            height: 300,
+            longitude: 113.30764968,
+            latitude: 23.1200491,
+            isshowMap: false,
+            province: '',
+            addList: [],
+            adds:[]
         }
 
     },
     // 路由传递参数
-    methods:{
+    methods: {
         swiper () {
             new Swiper('.swiper-container', {
                 autoplay: 1000,
@@ -43,34 +53,138 @@ export default {
                 observer: true
             })
         },
-        sub:function () {
-            let ajax=new J.A();
-            let datas={
-                liveAddress:this.address_de,
-                province:this.prov,
-                city:this.city,
-                district:this.district
+        sub: function () {
+            let ajax = new J.A();
+            let datas = {
+                liveAddress: this.address_de,
+                province: this.prov,
+                city: this.city,
+                district: this.district
             };
-            ajax.ajaxs('sys/user/saveAddress',datas,'POST').then(function (res) {
+            ajax.ajaxs('sys/user/saveAddress', datas, 'POST').then(function (res) {
                 console.log(res)
             })
+        },
+        showMap: function () {
+            var t = this;
+            this.isshowMap = !this.isshowMap;
+            var adds = [];
+            for (let ii = 0; ii < t.addList.length; ii++) {
+                adds.push(t.addList[ii].liveAddress)
+            }
+            t.adds=adds;
+
+            var map = new BMap.Map("div1");
+            map.centerAndZoom(new BMap.Point(113.30764968, 23.1200491), 13);
+            map.enableScrollWheelZoom(true);
+            var index = 0;
+            var myGeo = new BMap.Geocoder();
+
+
+
+        },
+
+        showMap_f(){
+            if (this.isshowMap == true) {
+                this.isshowMap = false
+            }
         }
     },
-    mounted:function () {
+    mounted: function () {
         console.log(this);
         this.swiper();
-        let t=this;
-        let ajax=new J.A();
-        t.isshow=this.$route.params.isshow;
+        let t = this;
+        let ajax = new J.A();
+        t.isshow = this.$route.params.isshow;
 
         //轮播图
-        ajax.ajaxs('/system/sowingmap/lunbolist',{},'GET').then(function (res) {
-            t.swiperList=res.rows
+        ajax.ajaxs('/system/sowingmap/lunbolist', {}, 'GET').then(function (res) {
+            t.swiperList = res.rows
         })
         //图片
-        ajax.ajaxs('/system/sowingmap//homepagelist',{},'GET').then(function (res) {
-            t.picUrl=res.rows
-        })
-    },
+        ajax.ajaxs('/system/sowingmap//homepagelist', {}, 'GET').then(function (res) {
+            t.picUrl = res.rows
+        });
 
+        // if(navigator.geolocation) {
+        //     navigator.geolocation.getCurrentPosition(
+        //         function (position) {
+        //             var longitude = position.coords.longitude;
+        //             var latitude = position.coords.latitude;
+        //             console.log(longitude)
+        //             console.log(latitude)
+        //         },
+        //         function (e) {
+        //             var msg = e.code;
+        //             var dd = e.message;
+        //             console.log(msg)
+        //             console.log(dd)
+        //         }
+        //     )
+        // }
+
+        var map = new BMap.Map("div1");
+        var point = new BMap.Point(this.longitude, this.latitude);
+        map.centerAndZoom(point, 12);
+        var marker = new BMap.Marker(point);// 创建标注
+        map.addOverlay(marker);
+        map.enableScrollWheelZoom(true);
+
+        var geoc = new BMap.Geocoder();
+        geoc.getLocation(point, function (rs) {
+            var addComp = rs.addressComponents;
+            t.province = addComp.province;
+
+            ajax.ajaxs('/sys/user/mySelfGpsMapPhone', {province: t.province}, 'GET').then(function (rs) {
+                var addlist = [];
+                for (let ii = 0; ii < rs.length; ii++) {
+                    rs[ii].liveAddress = rs[ii].province + rs[ii].city + rs[ii].district + rs[ii].liveAddress;
+                    t.adds.push(rs[ii].liveAddress)
+                }
+                t.addList = rs
+
+                for(let jj=0;jj<t.adds.length;jj++){
+                    setTimeout(window.bdGEO, 400);
+                    geoc.getPoint(t.adds[jj],function (point) {
+                        if(point){
+                            var address=new BMap.Point(point.lng,point.lat)
+                            var marker = new BMap.Marker(address);
+                            console.log(marker);
+                            map.addOverlay(marker);
+                        }
+                    })
+
+                }
+                // function bdGEO() {
+                //     var add = t.adds[index];
+                //     geocodeSearch(add);
+                //     index++;
+                //
+                // }
+
+                // function geocodeSearch(add) {
+                //
+                //     if (index < t.adds.length) {
+                //         setTimeout(window.bdGEO, 400);
+                //     }
+                //     myGeo.getPoint(add, function (point) {
+                //         if (point) {
+                //             var address = new BMap.Point(point.lng, point.lat);
+                //             addMarker(address, new BMap.Label(index + ":" + add, {offset: new BMap.Size(20, -10)}));
+                //         }
+                //     }, "广州市");
+                // }
+
+                // 编写自定义函数,创建标注
+                // function addMarker(point, label) {
+                //
+                //     var marker = new BMap.Marker(point);
+                //     map.addOverlay(marker);
+                //     marker.setLabel(label);
+                // }
+
+            })
+        });
+    },
 }
+

@@ -16,7 +16,9 @@ export default {
             state:'登录',
             info:{},
             list:[],
-            isRead:0
+            isRead:0,
+            role:'',
+            userId:''
         }
     },
     methods:{
@@ -24,11 +26,14 @@ export default {
             var t=this;
             var ajax=new J.A();
             ajax.ajaxs('/sys/user/appPersonal',{},'GET').then(function (res) {
-                if(res=='no'){
+                console.log(1111111111111);
+                if(res.msg=='no'){
                     t.login=0
-                }
-                t.info=res;
-                t.login=1
+                }else {
+                t.info=res.msg;
+                t.role=res.msg.roleId;
+                t.userId=res.msg.id;
+                t.login=1}
             })
         }
     },

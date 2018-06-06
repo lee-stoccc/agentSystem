@@ -31,13 +31,27 @@
                     <div class="area-2 a-3" style="width: 37%;margin-left: 0">
                         价格:<input type="text" name="advertisingMoney">
                     </div>
+                    <input :value="userId" name="userId" type="hidden"/>
                 </div>
                 <div class="text-4 area-2"><textarea rows="3"
                                                      name="advertisingDetails"></textarea></div>
                 <div>
                     <div class="pic">
-                        <input type="file" name="file1" accept="image/*" capture="camera" @change="upload1($event)">
-                        <input type="file" name="file2" accept="image/*" capture="camera" @change="upload2($event)">
+                        <div> 请选择 logo 图片
+                            <input type="file" name="file1" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图一
+                            <input type="file" name="file2" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图二
+                            <input type="file" name="file3" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图三
+                            <input type="file" name="file4" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图四
+                            <input type="file" name="file5" accept="image/*" multiple @change="upload1($event)">
+                        </div>
                     </div>
                 </div>
                 <div class="line"></div>
@@ -65,13 +79,27 @@
                     <div class="area-2 a-3" style="width: 37%;margin-left: 0">
                         价格:<input type="text" name="manageMoney">
                     </div>
+                    <input :value="userId" name="userId" type="hidden"/>
                 </div>
                 <div class="text-4 area-2"><textarea rows="3"
                                                      name="advertisingDetails"></textarea></div>
                 <div>
                     <div class="pic">
-                        <input type="file" name="file1" accept="image/*" capture="camera">
-                        <input type="file" name="file2" accept="image/*" capture="camera">
+                        <div> 请选择 logo 图片
+                            <input type="file" name="file1" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图一
+                            <input type="file" name="file2" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图二
+                            <input type="file" name="file3" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图三
+                            <input type="file" name="file4" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图四
+                            <input type="file" name="file5" accept="image/*" multiple @change="upload1($event)">
+                        </div>
                     </div>
                 </div>
                 <div class="line"></div>
@@ -99,12 +127,27 @@
                     <div class="area-2 a-3" style="width: 37%;margin-left: 0">
                         价格:<input type="text" name="operatorMoney">
                     </div>
+                    <input :value="userId" name="userId" type="hidden"/>
                 </div>
                 <div class="text-4 area-2"><textarea rows="3"
                                                      name="operatorDetails"></textarea></div>
                 <div>
                     <div class="pic">
-                        <input type="file" name="file1" accept="image/*" capture="camera">
+                        <div> 请选择 logo 图片
+                            <input type="file" name="file1" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图一
+                            <input type="file" name="file2" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图二
+                            <input type="file" name="file3" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图三
+                            <input type="file" name="file4" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图四
+                            <input type="file" name="file5" accept="image/*" multiple @change="upload1($event)">
+                        </div>
                     </div>
                 </div>
                 <div class="line"></div>
@@ -127,12 +170,27 @@
                     <div class="area-2" style="width: 40%;margin-left:2rem">
                         价格:<input type="text" name="merchantBudget">
                     </div>
+                    <input :value="userId" name="userId" type="hidden"/>
                 </div>
                 <div class="text-4 area-2"><textarea rows="3"
                                                      name="merchantDetails"></textarea></div>
                 <div>
                     <div class="pic">
-                        <input type="file" name="file1" accept="image/*" capture="camera">
+                        <div> 请选择 logo 图片
+                            <input type="file" name="file1" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图一
+                            <input type="file" name="file2" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图二
+                            <input type="file" name="file3" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图三
+                            <input type="file" name="file4" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图四
+                            <input type="file" name="file5" accept="image/*" multiple @change="upload1($event)">
+                        </div>
                     </div>
                 </div>
                 <div class="line"></div>
@@ -158,14 +216,28 @@
                     <div class="area-2 a-3" style="width: 37%;margin-left: 0">
                         价格:<input type="text" name="miniappMoney">
                     </div>
+                    <input :value="userId" name="userId" type="hidden"/>
                 </div>
                 <div class="text-4 area-2"><textarea rows="3"
                                                      name="miniappDetails"></textarea></div>
 
                 <div>
                     <div class="pic">
-                        <input type="file" name="file1" accept="image/*" capture="camera">
-                        <input type="file" name="file2" accept="image/*" capture="camera">
+                        <div> 请选择 logo 图片
+                            <input type="file" name="file1" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图一
+                            <input type="file" name="file2" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图二
+                            <input type="file" name="file3" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图三
+                            <input type="file" name="file4" accept="image/*" multiple @change="upload1($event)">
+                        </div>
+                        <div>请选择轮播图四
+                            <input type="file" name="file5" accept="image/*" multiple @change="upload1($event)">
+                        </div>
                     </div>
                 </div>
                 <div class="line"></div>

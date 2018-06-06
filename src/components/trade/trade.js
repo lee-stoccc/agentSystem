@@ -10,6 +10,7 @@ export default {
         return {
             msg: 'Welcome to Your Vue.js App',
             types: 1,
+            type:2,
             area: [
                 {id: 4, name: '运营'},
                 {id: 5, name: '商家'},
@@ -24,7 +25,7 @@ export default {
             list2:[],//广告合作
             list3:[], //合作经营的
             list4:[],//运营商
-            list5:{} //商家
+            list5:[] //商家
         }
     },
     methods: {
@@ -66,6 +67,7 @@ export default {
         let ajax =new J.A();
         // 广告合作
         ajax.ajaxs('/system/advertising/getListByStatus',{},'GET').then(function (res) {
+            console.log(res+11111111111)
             t.list2=res;
         });
             // 小程序
@@ -88,6 +90,7 @@ export default {
         // 商家
         ajax.ajaxs('/system/merchant/getListByStatus',{},'GET').then(function (res) {
             t.list5=res;
+
         })
     }
 }

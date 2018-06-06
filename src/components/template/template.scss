@@ -20,8 +20,9 @@
   justify-content: space-around;
   text-align: center;
   >div{
+    width: 100%;
     >div:nth-child(1){
-      height: 14rem;
+      height: 20rem;
       @include m($b:0.5rem,$t:0.5rem)
     }
     span:nth-child(1){
@@ -32,7 +33,7 @@
       color:#e60000 ;
     }
     @include m($b:1.5rem);
-    width: 40%;
+    width: 100%;
     img{
       height: 100%;
       width: 100%;

@@ -18,9 +18,13 @@
             </div>
         </div>
         <div class="money">
-            <div><img src="../../assets/imgs/pri.png" alt="" style="position: relative;top: 2px;margin-right: 2px">速用币：<span>{{info.wyzMoney}}</span></div>
-            <div><img src="../../assets/imgs/m-1-2.png" alt="" style="position: relative;top: 2px;margin-right:2px">总速用币：<span>{{info.wyzAllmoney}}</span></div>
-            <div><img src="../../assets/imgs/m-1-3.png" alt="" style="position: relative;top: 2px;margin-right: 2px">等级：<span>{{info.agencyRank}}</span></div>
+            <div>
+                <img src="../../assets/imgs/pri.png" alt="" style="position: relative;top: 2px;margin-right: 2px">
+                <span>速用币:</span>
+                <span>{{info.wyzMoney}}</span>
+            </div>
+            <div><img src="../../assets/imgs/m-1-2.png" alt="" style="position: relative;top: 2px;margin-right:2px"><span>总速用币：</span><span>{{info.wyzAllmoney}}</span></div>
+            <div><img src="../../assets/imgs/m-1-3.png" alt="" style="position: relative;top: 2px;margin-right: 2px"><span>等级：</span><span>{{info.agencyRank}}</span></div>
         </div>
 
         <div class="category">
@@ -28,7 +32,7 @@
                 <div><img src="../../assets/imgs/m-2-1.png" alt=""></div>
                 <div>我的收藏</div>
             </div>
-            <div @click="go('Publish')">
+            <div @click="go('Publish',{userId:userId})">
                 <div><img src="../../assets/imgs/m-2-2.png" alt=""></div>
                 <div>我的发布</div>
             </div>
@@ -66,7 +70,7 @@
                 <div><img src="../../assets/imgs/m-4-1.png" alt=""></div>
                 <div>资料库</div>
             </div>
-            <div @click="go('Feedback')">
+            <div @click="go('Feedback')"  :style="role==1?'':'display:none'">
                 <div><img src="../../assets/imgs//m-4-2.png" alt="" ></div>
                 <div>投诉反馈</div>
             </div>

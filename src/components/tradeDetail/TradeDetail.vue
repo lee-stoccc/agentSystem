@@ -8,6 +8,7 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide" v-for="l in list1_pic"><img :src='l.imgUrl' alt="" :id='l.id'></div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -144,10 +145,10 @@
                     <div class="d-2"><span>{{list5.merchantName}}</span><span style="color:#ec3939">￥&nbsp;</span><span
                             style="color:#e82424">{{list5.merchantName}}</span></div>
                     <div class="d-2 d-3"><span>行业名称：<span>{{list5.merchantTrade}}</span>
-                    </span><img src="../../assets/imgs/m-2-1.png" alt="">&nbsp;&nbsp;<span>收藏</span>
+                    </span><img src="../../assets/imgs/m-2-1.png" alt=""  @click="coll(id,types,'/system/wechat/myCollection')">&nbsp;&nbsp;<span>收藏</span>
                     </div>
                     <div class="d-2 d-3">
-                        <img src="../../assets/imgs/tel2.png" alt="" @click="coll(id,types,'/system/wechat/myCollection')">&nbsp;&nbsp;<span>{{list5.merchantPhone}}</span>
+                        <img src="../../assets/imgs/tel2.png" alt="" >&nbsp;&nbsp;<span>{{list5.merchantPhone}}</span>
                         <span class="d-r"></span>
                     </div>
                 </div>

@@ -9,7 +9,8 @@ export default {
         return {
             msg: 'Welcome to Your Vue.js App',
             type:4,
-            list:[]
+            list:[],
+            cut:''
         }
     },
     methods:{
@@ -21,9 +22,11 @@ export default {
         }
     },
     mounted:function () {
+        this.cut=this.$route.params.cut;
         var t=this;
-        let datas={}
-        let url='/system/company/list'
+        let datas={};
+        var url='/system/company/list';
+
         var ajax=new J.A();
         ajax.ajaxs(url,datas,"GET").then(
             function (res) {

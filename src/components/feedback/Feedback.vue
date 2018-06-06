@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div  :class="isshow==1?'bg':''">
+        <div  :class="isshow==1?'bg':''" @click="close">
             <div class="coll">投诉反馈</div>
             <div v-for="l in list" >
                 <div class="d-1">
@@ -15,9 +15,9 @@
                 <div style="padding-left: 1rem;padding-right: 1rem" v-html="l.content"></div>
                 <div class="date">
                     <div>日期：{{l.gtmCreate}}</div>
-                    <span @click="response(l.cid,l.title)">回复</span>
+                    <span @click.stop="response(l.cid,l.title)">回复</span>
                 </div>
-                <div style="height: 4px;background-color: #eee;margin-top: 1rem;margin-bottom: 4rem"></div>
+                <div style="height: 4px;background-color: #eee;margin-top: 1rem;margin-bottom: 4rem" ></div>
             </div>
         </div>
         <div class="call" :style="isshow==1?'':'display:none'">

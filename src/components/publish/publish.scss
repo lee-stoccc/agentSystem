@@ -67,11 +67,16 @@
   width: 35%;
 }
 .pic{
-  width: 10rem;
+  width: 14.3rem;
   text-align: center;
   margin: 0 auto;
+  >div{
+    border: 1px solid #eee;
+    border-radius: 6px;
+    @include m($t:0.4rem)
+  }
   input{
-    @include p($t:1rem)
+    @include p($t:1rem,$l:2px)
   }
 }
 .btn{
@@ -119,4 +124,13 @@
   position: relative;
   left: 25%;
   @include m($b:2rem)
+}
+
+input[type="file"]{
+
+  width: 100%;
+  height: 30px;
+  position: relative;
+  top: -10px;
+  cursor: pointer;
 }

@@ -8,7 +8,7 @@ import AlertInput from './components/alertInput/AlertInput.vue'
 import Alert from './components/alert/Alert.vue'
 import axios from 'axios'
 import '../static/validate.js'
-const URL = 'http://192.168.1.162'
+const URL = 'http://os.suyongw.com'
 import SMEditor from 'smeditor'
 import $ from 'jquery'
 
@@ -53,6 +53,7 @@ Vue.prototype.http = function (url, data) {
         });
     })
 };
+
 
 new Vue({
     el: '#app',

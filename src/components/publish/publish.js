@@ -1,5 +1,6 @@
 import * as J from '../../../static/ajax'
-const url='http://192.168.1.141';
+// const url='http://os.suyongw.com';
+const url='http://os.suyongw.com'
 import $ from 'jquery'
 export default {
     components: {
@@ -32,6 +33,7 @@ export default {
                     console.log(err)
                 }
             },
+            userId:''
         }
     },
     methods:{
@@ -52,10 +54,10 @@ export default {
         },
 
         //发布触发回调
-        publicSuccess:function () {
+        publicSuccess:function (tips) {
             var t=this;
             t.show=1;
-            t.tips='发布成功';
+            t.tips=tips;
             setTimeout(function () {
                 t.show=0;
                 t.go('Mine')
@@ -71,11 +73,10 @@ export default {
                 processData: false,
                 contentType: false,
                 data : formData,// 你的formid
-                success:function (data) {
-                    t.publicSuccess()
+                success:function (res) {
+                    res.msg==='no'?t.publicSuccess('请登录账号'):t.publicSuccess('发布成功');
                 },
                 error:function () {
-                    t.publicSuccess()
                 }
             })
 
@@ -92,11 +93,10 @@ export default {
                 processData: false,
                 contentType: false,
                 data : formData,// 你的formid
-                success:function (data) {
-                    t.publicSuccess()
+                success:function (res) {
+                    res.msg==='no'?t.publicSuccess('请登录账号'):t.publicSuccess('发布成功');
                 },
                 error:function () {
-                    t.publicSuccess()
                 }
             })
 
@@ -112,11 +112,10 @@ export default {
                 processData: false,
                 contentType: false,
                 data : formData,// 你的formid
-                success:function (data) {
-                    t.publicSuccess()
+                success:function (res) {
+                    res.msg==='no'?t.publicSuccess('请登录账号'):t.publicSuccess('发布成功');
                 },
                 error:function () {
-                    t.publicSuccess()
                 }
             })
         },
@@ -131,11 +130,10 @@ export default {
                 processData: false,
                 contentType: false,
                 data : formData,// 你的formid
-                success:function (data) {
-                    t.publicSuccess()
+                success:function (res) {
+                    res.msg==='no'?t.publicSuccess('请登录账号'):t.publicSuccess('发布成功');
                 },
                 error:function () {
-                    t.publicSuccess()
                 }
             })
         },
@@ -150,17 +148,16 @@ export default {
                 processData: false,
                 contentType: false,
                 data : formData,// 你的formid
-                success:function (data) {
-                    t.publicSuccess()
+                success:function (res) {
+                    res.msg==='no'?t.publicSuccess('请登录账号'):t.publicSuccess('发布成功');
                 },
                 error:function () {
-                    t.publicSuccess()
                 }
             })
         }
     },
     mounted:function () {
-        console.log(this);
+        this.userId=this.$route.params.userId;
         document.getElementById('input-area').style.minHeight='130px'
     },
 
