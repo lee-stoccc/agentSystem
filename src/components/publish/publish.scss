@@ -55,10 +55,13 @@
   width: 60%;
   @include m($t:2rem,$l:2rem);
   input{
+    -web-kit-appearance:none;
+    -moz-appearance: none;
     width: 70%;
-    border: 1px #fff solid;
     resize:none;
-    outline:none
+    outline:none;
+    outline:0;
+    border:none
   }
 
 }
@@ -115,7 +118,7 @@
 }
 .sub{
   text-align: center;
-  color: #007aff;
+  color: #fff;
   border: 1px solid #eee;
   border-radius: 8px;
   height: 3rem;
@@ -123,7 +126,8 @@
   width: 50%;
   position: relative;
   left: 25%;
-  @include m($b:2rem)
+  @include m($b:2rem);
+  background-color: #25aaff;
 }
 
 input[type="file"]{

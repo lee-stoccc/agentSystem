@@ -18,7 +18,8 @@ export default {
             list:[],
             isRead:0,
             role:'',
-            userId:''
+            userId:'',
+            show:0
         }
     },
     methods:{
@@ -26,7 +27,6 @@ export default {
             var t=this;
             var ajax=new J.A();
             ajax.ajaxs('/sys/user/appPersonal',{},'GET').then(function (res) {
-                console.log(1111111111111);
                 if(res.msg=='no'){
                     t.login=0
                 }else {
@@ -34,6 +34,20 @@ export default {
                 t.role=res.msg.roleId;
                 t.userId=res.msg.id;
                 t.login=1}
+            })
+        },
+        loginoutapp(){
+            var t=this;
+            var ajax=new J.A();
+            ajax.ajaxs('/loginoutapp',{},'GET').then(function (res) {
+                if(res.msg==='success'){
+                    t.login=0;
+                    t.info={};
+                    t.userId=99
+                    t.Tip('退出登录')
+                }else {
+
+                }
             })
         }
     },

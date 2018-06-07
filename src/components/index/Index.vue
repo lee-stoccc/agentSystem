@@ -60,18 +60,24 @@
             </div>
         </div>
 
-        <div class="adv">
-            <img src="../../assets/imgs/swiper01.jpg" alt="">
+        <div class="swipera car" style="height: 6rem">
+            <div class="swiper-container" style="height: 6rem">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-for="l in swiperList2"><img :src='l.imgUrl' alt="" :id='l.id'></div>
+                </div>
+            </div>
         </div>
 
         <div class="temp">
             <div v-for="l in picUrl">
-                <div :id='l.id'><img :src='l.imgUrl' alt=""></div>
+                <div :id='l.id'><img :src='l.imgUrl' alt="" @click="getSrc"></div>
             </div>
         </div>
         <div id="div1"  style="width: 100%;height: 300px;position: absolute;top: 15%;z-index: 9" :style="isshowMap==true?'':'display:none'"
              @click="showMap"></div>
-        <AlertInput class="alertinptu" :isshow="isshow" :showInput="isshow"></AlertInput>
+
+        <!--第一次登录输入地址-->
+        <AlertInput class="alertinptu" :isshow="isshow" :showInput="showInput" :showImg="showImg" :src="src"></AlertInput>
         <Footer :type="type"></Footer>
 
     </div>

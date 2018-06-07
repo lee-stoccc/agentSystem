@@ -29,6 +29,7 @@ export default {
                 debugger: true,
             },
             swiperList: [],
+            swiperList2: [],
             picUrl: [],
             isshow: "1",
             address_detail: null, //详细地址
@@ -40,12 +41,22 @@ export default {
             isshowMap: false,
             province: '',
             addList: [],
-            adds:[]
+            adds:[],
+            src:'',
+            showInput:'1'
         }
 
     },
     // 路由传递参数
     methods: {
+        getSrc(e){
+            console.log(e);
+            this.src=e.target.currentSrc;
+            this.showImg='0'
+            this.isshow='0'
+
+
+        },
         swiper () {
             new Swiper('.swiper-container', {
                 autoplay: 1000,
@@ -96,6 +107,7 @@ export default {
         let t = this;
         let ajax = new J.A();
         t.isshow = this.$route.params.isshow;
+        t.showInput=this.$route.params.isshow;
 
         //轮播图
         ajax.ajaxs('/system/sowingmap/lunbolist', {}, 'GET').then(function (res) {
@@ -104,6 +116,9 @@ export default {
         //图片
         ajax.ajaxs('/system/sowingmap//homepagelist', {}, 'GET').then(function (res) {
             t.picUrl = res.rows
+        });
+        ajax.ajaxs('/system/sowingmap/addAdvertisingPicturelist', {}, 'GET').then(function (res) {
+            t.swiperList2 = res.rows
         });
 
         // if(navigator.geolocation) {
@@ -155,34 +170,6 @@ export default {
                     })
 
                 }
-                // function bdGEO() {
-                //     var add = t.adds[index];
-                //     geocodeSearch(add);
-                //     index++;
-                //
-                // }
-
-                // function geocodeSearch(add) {
-                //
-                //     if (index < t.adds.length) {
-                //         setTimeout(window.bdGEO, 400);
-                //     }
-                //     myGeo.getPoint(add, function (point) {
-                //         if (point) {
-                //             var address = new BMap.Point(point.lng, point.lat);
-                //             addMarker(address, new BMap.Label(index + ":" + add, {offset: new BMap.Size(20, -10)}));
-                //         }
-                //     }, "广州市");
-                // }
-
-                // 编写自定义函数,创建标注
-                // function addMarker(point, label) {
-                //
-                //     var marker = new BMap.Marker(point);
-                //     map.addOverlay(marker);
-                //     marker.setLabel(label);
-                // }
-
             })
         });
     },

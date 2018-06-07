@@ -26,6 +26,17 @@ Vue.prototype.go = function (name, params) {
     router.push({name: name, params: params})
 };
 
+// 弹框函数
+Vue.prototype.Tip=function (tips) {
+    let that=this;
+    that.tips=tips;
+    that.show=1;
+    setTimeout(function () {
+        that.show=0;
+        that.tip=''
+    },2000)
+}
+
 // 网络请求封装函数
 Vue.prototype.http = function (url, data) {
     url = URL + url;

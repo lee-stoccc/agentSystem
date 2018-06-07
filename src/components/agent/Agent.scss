@@ -85,12 +85,11 @@
   }
   > div:nth-child(2) {
     font-size: 1.5rem;
-    @include m($l: 1rem);
+    @include m($l: 1rem,$r:1rem);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
-    width: 64%;
+    flex-grow: 1;
     .des {
       font-size: 1rem;
       overflow: hidden;
@@ -101,7 +100,7 @@
     }
     .d-2 {
       display: flex;
-      align-items: flex-end;
+      align-items: flex-start;
       span:nth-child(1) {
         flex-grow: 1;
         color: #666;

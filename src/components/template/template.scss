@@ -13,8 +13,7 @@
 }
 
 .temp{
-  width: 90%;
-  @include m($l:5%,$t:1.5rem);
+  width: 100%;
   display: flex;
   flex-wrap:wrap;
   justify-content: space-around;
@@ -23,7 +22,6 @@
     width: 100%;
     >div:nth-child(1){
       height: 20rem;
-      @include m($b:0.5rem,$t:0.5rem)
     }
     span:nth-child(1){
       font-size:0.5rem;
@@ -32,7 +30,6 @@
       font-size:2rem;
       color:#e60000 ;
     }
-    @include m($b:1.5rem);
     width: 100%;
     img{
       height: 100%;

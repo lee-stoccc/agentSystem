@@ -1,19 +1,23 @@
 <template>
-    <div>
+    <div style="background-color: #fff">
 
         <div>
             <div class="coll" id="coll">我的发布</div>
 
-            <div class="area-1" @click="choarea"> {{name}}</div>
+            <div class="area-1" @click="choarea"  style="display: flex;justify-items: center;padding-right: 1rem">
+                <span> {{name}} </span>
+
+                <img src="../../../src/assets/imgs/t-3.png" alt="" style="margin-left: 1rem;width: 1rem;height: 1rem;margin-top: 0.2rem"></div>
             <div class="area" :class=" dot==true?'dis':'dis2'">
                 <div @click="chos" v-for="n in area" :data-sid=n.id :data-na=n.name>{{n.name}}</div>
+
             </div>
         </div>
         <!--广告合作-->
         <form action="" id="signupForm1">
             <div :style="aid==10?'':'display:none'">
                 <div class="area-2">
-                    名称:   <input type="text" name="advertisingName">
+                    名称: <input type="text" name="advertisingName">
                 </div>
                 <div class="area-2">
                     联系电话:   <input type="text" name="advertisingPhone">

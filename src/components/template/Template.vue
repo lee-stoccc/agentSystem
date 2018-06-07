@@ -3,7 +3,7 @@
 
         <!--小程序模板-->
         <div @click="go('TempDetail',{id:l.id})" v-for="l in list" :id='l.id' :style="cut==0?'':'display:none'" style="width: 40%">
-            <div style="height: 14rem;"><img :src='l.url' alt=""></div>
+            <div style="height: 14rem;margin-top: 1.5rem;margin-bottom: 0.5rem"><img :src='l.url' alt=""></div>
             <div>{{l.name}}</div>
             <div><span>￥</span><span>{{l.price}}</span></div>
         </div>

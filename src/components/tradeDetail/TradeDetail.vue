@@ -6,7 +6,7 @@
                 <div class="swipera car">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide" v-for="l in list1_pic"><img :src='l.imgUrl' alt="" :id='l.id'></div>
+                            <div class="swiper-slide" v-for="l in list1_pic"><img :src='l' alt="" :id='l.id'></div>
                         </div>
 
                     </div>
@@ -74,7 +74,7 @@
                 <div class="swipera car">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide" v-for="l in list3_pic"><img :src='l.imgUrl' alt="" :id='l.id'></div>
+                            <div class="swiper-slide" v-for="l in list3_pic"><img :src='l' alt="" :id='l.id'></div>
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
                 <div class="swipera car">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide" v-for="l in list4_pic"><img :src='l.imgUrl' alt="" :id='l.id'></div>
+                            <div class="swiper-slide" v-for="l in list4_pic"><img :src='l' alt="" :id='l.id'></div>
                         </div>
                     </div>
                 </div>
@@ -134,7 +134,7 @@
                 <div class="swipera car">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide" v-for="l in list5_pic"><img :src='l.imgUrl' alt="" :id='l.id'></div>
+                            <div class="swiper-slide" v-for="l in list5_pic"><img :src='l' alt="" :id='l.id'></div>
                         </div>
                     </div>
                 </div>

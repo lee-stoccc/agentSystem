@@ -1,6 +1,12 @@
 <template>
     <div>
-        <div class="logo"><img src="../../assets/imgs/swiper01.jpg" alt=""></div>
+        <div class="swipera car">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-for="l in swiperList"><img :src='l.imgUrl' alt="" :id='l.id'></div>
+                </div>
+            </div>
+        </div>
         <div style="margin-bottom: 5rem">
             <div class="type">
                 <div :class="types==1?'cho':'uncho'" @click="shows" id="1" data-s="1">小程序</div>
@@ -116,7 +122,8 @@
         <Footer :type="type"></Footer>
     </div>
 </template>
-
+<link rel="stylesheet" href="/static/swiper.min.css"/>
+<script src="/static/swiper.min.js"></script>
 <script src="./trade.js">
 
 </script>

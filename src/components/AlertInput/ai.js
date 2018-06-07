@@ -2028,15 +2028,18 @@ export default {
             district: '东城区',
             cityArr: [],
             districtArr: [],
-            address_de:''
+            address_de:'',
+            showImg:'0',
+
         }
 
     },
-    props:['isshow','showInput'],
+    props:['isshow','showInput','showImg','src'],
     methods:{
         canceinput(){
             this.isshow='1';
-            this.showInput='1'
+            this.showInput='1';
+            this.showImg='1'
         },
         submit:function () {
             let ajax=new J.A();

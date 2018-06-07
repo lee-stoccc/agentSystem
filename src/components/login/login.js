@@ -43,7 +43,12 @@ export default {
                             t.show=0;
                             t.go('Index',{isshow:t.isshow})
                         },2000);
-
+                    }else {
+                        t.show=1;
+                        t.tips='密码错误';
+                        setTimeout(function () {
+                            t.show=0;
+                        },2000);
                     }
                 }
             ).catch(function (err) {
