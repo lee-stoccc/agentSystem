@@ -1,7 +1,7 @@
 import $ from 'jquery'
 // 公开一个封装的ajax类
 // const url_1='http://os.suyongw.com'
-const url_1='http://192.168.1.161'
+const url_1='http://192.168.1.141'
 export class A {
     ajaxs(url, data,method) {
         url=url_1+url;
