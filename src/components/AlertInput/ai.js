@@ -2020,8 +2020,6 @@ export default {
     data () {
         return {
             list:[],
-            isshow:'0',
-            showInput:'0',
             arr:arrAll,
             prov: '北京',
             city: '北京',
@@ -2029,17 +2027,24 @@ export default {
             cityArr: [],
             districtArr: [],
             address_de:'',
-            showImg:'0',
-
         }
 
     },
     props:['isshow','showInput','showImg','src'],
+    mounted:function () {
+
+    },
     methods:{
+
+        // 传给父组件
         canceinput(){
-            this.isshow='1';
-            this.showInput='1';
-            this.showImg='1'
+            var datas={
+                isshow:!this.isshow,
+                showImg:!this.showImg
+            };
+            // 设定事件，传事件，和传值
+            this.$emit('canceinput_z', datas)
+
         },
         submit:function () {
             let ajax=new J.A();
@@ -2051,8 +2056,8 @@ export default {
             };
             ajax.ajaxs('/sys/user/saveAddress',datas,'POST').then(function (res) {
                 if(res.code==0){
-                    this.isshow='1';
-                    this.showInput='1'
+                    this.isshow=!this.isshow;
+                    this.showInput=!this.showInput
                 }
             })
         },

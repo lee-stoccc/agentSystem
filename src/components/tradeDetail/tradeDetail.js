@@ -39,7 +39,7 @@ export default {
             list2_pic:[],  // 广告
             list2:'',
             list3:'',   // 合作运营
-            list3_pic:'',
+            list3_pic:[],
             list4:'',    //运营商
             list4_pic:[],
             list5:'',    //商家

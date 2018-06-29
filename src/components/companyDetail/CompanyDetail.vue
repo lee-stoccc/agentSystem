@@ -1,6 +1,12 @@
 <template>
     <div>
-        <div class="logo"><img :src="l.companyUrl" alt=""></div>
+        <div class="swipera car">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-for="i in swiperList"><img :src='i.url' alt="" :id='i.id'></div>
+                </div>
+            </div>
+        </div>
         <div class="logo-1"><img :src="l.companyUrl" alt=""></div>
         <div class="name">{{l.companyName}}</div>
         <div class="other">
@@ -40,7 +46,8 @@
     </div>
 </template>
 
-
+<link rel="stylesheet" href="/static/swiper.min.css"/>
+<script src="/static/swiper.min.js"></script>
 <script src="./CompanyDetail.js">
 </script>
 

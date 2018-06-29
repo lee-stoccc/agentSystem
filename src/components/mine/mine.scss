@@ -114,3 +114,23 @@
     height: 100%;
   }
 }
+.fileInputContainer{
+  height: 5rem;
+  position:absolute;
+  width: 5rem;
+  top: 0;
+  right: 0;
+
+}
+.fileInput{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: 300px;
+  position:absolute;
+  right:0;
+  top:0;
+  opacity: 0;
+  filter:alpha(opacity=0);
+  cursor:pointer;
+}

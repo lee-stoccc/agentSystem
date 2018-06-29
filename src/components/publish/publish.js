@@ -1,6 +1,6 @@
 import * as J from '../../../static/ajax'
-const url='http://os.suyongw.com';
-// const url='http://os.suyongw.com'
+// const url='http://os.suyongw.com';
+const url='http://os.suyongw.com'
 import $ from 'jquery'
 export default {
     components: {
@@ -68,7 +68,7 @@ export default {
             var t=this;
             var formData = new FormData($('#signupForm1')[0]);
             $.ajax({
-                url : url+"/system/advertising/save",
+                url : t.URL+"/system/advertising/save",
                 type : "post",
                 processData: false,
                 contentType: false,
@@ -88,7 +88,7 @@ export default {
             var t=this;
             var formData = new FormData($('#signupForm2')[0]);
             $.ajax({
-                url : url+"/system/manage/save",
+                url :t.URL+"/system/manage/save",
                 type : "post",
                 processData: false,
                 contentType: false,
@@ -107,7 +107,7 @@ export default {
             var t =this;
             var formData = new FormData($('#signupForm3')[0]);
             $.ajax({
-                url : url+"/system/miniappDetails/save",
+                url :t.URL+"/system/miniappDetails/save",
                 type : "post",
                 processData: false,
                 contentType: false,
@@ -125,7 +125,7 @@ export default {
             var t =this;
             var formData = new FormData($('#signupForm4')[0]);
             $.ajax({
-                url : url+"/system/operator/save",
+                url : t.URL+"/system/operator/save",
                 type : "post",
                 processData: false,
                 contentType: false,
@@ -143,7 +143,7 @@ export default {
             var t =this;
             var formData = new FormData($('#signupForm5')[0]);
             $.ajax({
-                url : url+"/system/merchant/save",
+                url :t.URL+"/system/merchant/save",
                 type : "post",
                 processData: false,
                 contentType: false,

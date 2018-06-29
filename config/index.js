@@ -8,12 +8,12 @@ module.exports = {
   dev: {
 
     // Paths
-    assetsSubDirectory: 'static',
+    assetsSubDirectory: 'app',
     assetsPublicPath: '/',
     proxyTable: {},
 
     // Various Dev Server settings
-    host: '192.168.1.160', // can be overwritten by process.env.HOST
+    host: '192.168.1.152', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
@@ -42,7 +42,7 @@ module.exports = {
 
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
+    assetsSubDirectory: 'app',
     assetsPublicPath: '/',
 
     /**

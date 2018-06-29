@@ -7,8 +7,8 @@
                     <div><img src="../../assets/imgs/c-1.png" alt=""></div>
                     <div>
                         <div class="d-2 d-3">
-                            <div style="font-size: 16px;width: 100%;text-align:left">{{l.title}}</div>
-                            <span style="color: orangered"></span>
+                            <div style="font-size: 16px;text-align:left">{{l.title}}</div>
+                            <div style="color: orangered;margin-right: 2rem" >{{l.status==1?'已回复':'未回复'}}</div>
                         </div>
                     </div>
                 </div>

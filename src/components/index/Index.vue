@@ -74,10 +74,10 @@
             </div>
         </div>
         <div id="div1"  style="width: 100%;height: 300px;position: absolute;top: 15%;z-index: 9" :style="isshowMap==true?'':'display:none'"
-             @click="showMap"></div>
+            ></div>
 
-        <!--第一次登录输入地址-->
-        <AlertInput class="alertinptu" :isshow="isshow" :showInput="showInput" :showImg="showImg" :src="src"></AlertInput>
+        <!--第一次登录输入地址                                                                                 从子组件取回事件和datas-->
+        <AlertInput class="alertinptu" :isshow="isshow" :showInput="showInput" :showImg="showImg" :src="src" v-on:canceinput_z="getsdf"></AlertInput>
         <Footer :type="type"></Footer>
 
     </div>

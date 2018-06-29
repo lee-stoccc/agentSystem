@@ -49,7 +49,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
+    flex-grow: 1;
     width: 64%;
     .des {
       font-size: 1rem;
@@ -72,6 +72,9 @@
 
     }
     .d-3{
+      >div:nth-child(1){
+        flex-grow: 1;
+      }
       font-size:8px;
       img{
         width: 1.2rem;

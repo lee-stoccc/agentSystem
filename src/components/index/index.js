@@ -31,19 +31,22 @@ export default {
             swiperList: [],
             swiperList2: [],
             picUrl: [],
-            isshow: "1",
+
             address_detail: null, //详细地址
             userlocation: {lng: "", lat: ""},
             value: '',
             height: 300,
             longitude: 113.30764968,
             latitude: 23.1200491,
-            isshowMap: false,
+
             province: '',
             addList: [],
             adds:[],
             src:'',
-            showInput:'1'
+            isshowMap: false,
+            isshow: false,
+            showInput:false,
+            showImg:false
         }
 
     },
@@ -52,8 +55,8 @@ export default {
         getSrc(e){
             console.log(e);
             this.src=e.target.currentSrc;
-            this.showImg='0'
-            this.isshow='0'
+            this.showImg=!this.showImg
+            this.isshow= !this.isshow
 
 
         },
@@ -78,7 +81,7 @@ export default {
         },
         showMap: function () {
             var t = this;
-            this.isshowMap = !this.isshowMap;
+            this.isshowMap = true;
             var adds = [];
             for (let ii = 0; ii < t.addList.length; ii++) {
                 adds.push(t.addList[ii].liveAddress)
@@ -90,18 +93,25 @@ export default {
             map.enableScrollWheelZoom(true);
             var index = 0;
             var myGeo = new BMap.Geocoder();
-
-
-
         },
 
         showMap_f(){
-            if (this.isshowMap == true) {
-                this.isshowMap = false
+            if(this.isshowMap==true){
+                this.isshowMap=false
             }
+
+        },
+
+        // 子组件传回来的数据，控制浮沉关闭
+        getsdf:function (datas) {
+            this.showImg=datas.showImg;
+            this.isshow=datas.isshow;
+            console.log(datas)
         }
     },
     mounted: function () {
+        
+        
         console.log(this);
         this.swiper();
         let t = this;
@@ -168,7 +178,6 @@ export default {
                             map.addOverlay(marker);
                         }
                     })
-
                 }
             })
         });

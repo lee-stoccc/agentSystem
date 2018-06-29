@@ -2,6 +2,7 @@
  * Created by Administrator on 2018/5/18 0018.
  */
 import * as J from '../../../static/ajax'
+// const url='http://192.168.1.141'
 export default {
     components:{
         Mine:'Mine',
@@ -19,7 +20,8 @@ export default {
             isRead:0,
             role:'',
             userId:'',
-            show:0
+            show:0,
+            src:''
         }
     },
     methods:{
@@ -43,10 +45,26 @@ export default {
                 if(res.msg==='success'){
                     t.login=0;
                     t.info={};
-                    t.userId=99
+                    t.userId=99;
                     t.Tip('退出登录')
                 }else {
 
+                }
+            })
+        },
+        sub:function () {
+            var t = this;
+            var formData = new FormData($('#signupForm1')[0]);
+            $.ajax({
+                url: t.URL + "/system/userpic/save",
+                type: "post",
+                processData: false,
+                contentType: false,
+                data: formData,// 你的formid
+                success: function (res) {
+                    t.src=res.msg
+                },
+                error: function () {
                 }
             })
         }
@@ -63,6 +81,17 @@ export default {
                     t.isRead++;
                 }
             }
-        })
+        });
+
+        setTimeout(function () {
+            ajax.ajaxs('/system/userpic/getUserpic',{userId:t.userId},'GET').then(function (res) {
+                    t.src=res.imgurl;
+                    if(res.msg==='no'){
+                        t.login =0
+                    }
+            })
+        },1000);
+
+
     }
 }

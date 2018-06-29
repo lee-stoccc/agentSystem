@@ -10,7 +10,7 @@ export default {
 
     data () {
         return {
-            src: ['../../../static/f-1.png', '../../../static/f-2.png', '../../../static/f-3.png', '../../../static/f-4.png', '../../../static/fc-1.png', '../../../static/fc-2.png', '../../../static/fc-3.png', '../../../static/fc-4.png'],
+            src: ['../../../app/f-1.png', '../../../app/f-2.png', '../../../app/f-3.png', '../../../app/f-4.png', '../../../app/fc-1.png', '../../../app/fc-2.png', '../../../app/fc-3.png', '../../../app/fc-4.png'],
         }
     },
     methods: {

@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div :class="isshow=='0'?'bg':''" style="background-color: #eee" @click="canceinput"></div>
-        <div class="call" :style="showInput=='0'?'':'display:none'">
+        <div :class="isshow===true?'bg':''" style="background-color: #eee" @click="canceinput"></div>
+        <div class="call" :style="showInput===true?'':'display:none'">
             <div class="welcome">欢迎光临!新系统新增用户地图定位功能，为了更好的体验请您填写一下地址.</div>
             <div style="background-color: #eee;height: 1px;width: 100%"></div>
             <div class="address">地址：</div>
@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <div :style="showImg=='0'?'':'display:none'" class="showImg">
+        <div :style="showImg==true?'':'display:none'" class="showImg">
 
             <img :src='src' alt="">
         </div>

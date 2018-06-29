@@ -1,5 +1,3 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
 import router from './router'
@@ -8,12 +6,10 @@ import AlertInput from './components/alertInput/AlertInput.vue'
 import Alert from './components/alert/Alert.vue'
 import axios from 'axios'
 import '../static/validate.js'
-// const URL = 'http://192.168.1.161'
-const URL = 'http://os.suyongw.com'
+const URL = 'http://192.168.1.161:8866'
+// const URL = 'http://os.suyongw.com'
 import SMEditor from 'smeditor'
-import $ from 'jquery'
 
-// Vue.use($);
 Vue.use(SMEditor);
 Vue.prototype.$axios = axios;
 Vue.component('Footer', Footer);
@@ -21,6 +17,9 @@ Vue.component('Alert', Alert);
 Vue.component('SMEditor', SMEditor);
 Vue.component('AlertInput', AlertInput);
 Vue.config.productionTip = false;
+// Vue.prototype.URL='http://192.168.1.141';
+Vue.prototype.URL='http://os.suyongw.com';
+
 //封装的路由跳转函数
 Vue.prototype.go = function (name, params) {
     router.push({name: name, params: params})
@@ -57,7 +56,6 @@ Vue.prototype.http = function (url, data) {
                     return ret   // return this.$qs.stringify(data);
                 }],
                 headers: {"Content-Type": 'application/x-www-form-urlencoded;charset=UTF-8'},
-
           },
             ).then(function (res) {
             console.log(res);
