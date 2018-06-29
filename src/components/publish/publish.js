@@ -1,6 +1,10 @@
 import * as J from '../../../static/ajax'
 // const url='http://os.suyongw.com';
+
 const url='http://os.suyongw.com'
+
+// const url='http://os.suyongw.com'
+
 import $ from 'jquery'
 export default {
     components: {

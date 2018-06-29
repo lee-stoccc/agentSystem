@@ -6,7 +6,9 @@ import AlertInput from './components/alertInput/AlertInput.vue'
 import Alert from './components/alert/Alert.vue'
 import axios from 'axios'
 import '../static/validate.js'
+
 const URL = 'http://192.168.1.161:8866'
+
 // const URL = 'http://os.suyongw.com'
 import SMEditor from 'smeditor'
 
@@ -17,8 +19,13 @@ Vue.component('Alert', Alert);
 Vue.component('SMEditor', SMEditor);
 Vue.component('AlertInput', AlertInput);
 Vue.config.productionTip = false;
+
+
+// Vue.prototype.URL='http://os.suyongw.com';
+
 // Vue.prototype.URL='http://192.168.1.141';
-Vue.prototype.URL='http://os.suyongw.com';
+
+
 
 //封装的路由跳转函数
 Vue.prototype.go = function (name, params) {

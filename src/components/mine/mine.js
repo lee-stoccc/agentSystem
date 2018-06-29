@@ -2,7 +2,11 @@
  * Created by Administrator on 2018/5/18 0018.
  */
 import * as J from '../../../static/ajax'
+
 // const url='http://192.168.1.141'
+
+// const url='http://192.168.1.141'
+
 export default {
     components:{
         Mine:'Mine',
@@ -85,10 +89,14 @@ export default {
 
         setTimeout(function () {
             ajax.ajaxs('/system/userpic/getUserpic',{userId:t.userId},'GET').then(function (res) {
+
                     t.src=res.imgurl;
                     if(res.msg==='no'){
                         t.login =0
                     }
+
+                console.log(res)
+
             })
         },1000);
 
