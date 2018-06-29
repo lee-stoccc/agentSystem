@@ -11,9 +11,9 @@ export default {
             num:2,
             list:[],
             src:'',
-            showImg:'1',
-            isshow:'1',
-            showInput:'1'
+            showImg:false,
+            isshow:false,
+            showInput:false
         }
     },
     mounted:function () {
@@ -41,9 +41,13 @@ export default {
         getSrc(e) {
             console.log(e);
             this.src = e.target.currentSrc;
-            this.showImg = '0'
-            this.isshow = '0'
+            this.showImg = true
+            this.isshow = true
             console.log(this.showImg,this.isshow)
+        },
+        getsdf:function (datas) {
+            this.isshow=datas.isshow;
+            this.showImg=datas.showImg
         }
     }
 }

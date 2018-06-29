@@ -1,6 +1,6 @@
 <template>
     <div style="position: relative">
-        <AlertInput class="alertinptu" :isshow="isshow" :showInput="showInput" :showImg="showImg" :src="src"></AlertInput>
+        <AlertInput class="alertinptu" :isshow="isshow" :showInput="showInput" :showImg="showImg" :src="src" v-on:canceinput_z="getsdf"></AlertInput>
         <div class="coll">速用朋友圈</div>
         <div v-for="item in list">
 

@@ -87,12 +87,12 @@ export default {
                 adds.push(t.addList[ii].liveAddress)
             }
             t.adds=adds;
-
-            var map = new BMap.Map("div1");
-            map.centerAndZoom(new BMap.Point(113.30764968, 23.1200491), 13);
-            map.enableScrollWheelZoom(true);
+            // var map = new BMap.Map("div1");
+            // map.centerAndZoom(new BMap.Point(113.30764968, 23.1200491), 13);
+            // map.enableScrollWheelZoom(true);
             var index = 0;
-            var myGeo = new BMap.Geocoder();
+            // var myGeo = new BMap.Geocoder();
+            // this.miaohuidian()
         },
 
         showMap_f(){
@@ -107,11 +107,9 @@ export default {
             this.showImg=datas.showImg;
             this.isshow=datas.isshow;
             console.log(datas)
-        }
+        },
     },
     mounted: function () {
-        
-        
         console.log(this);
         this.swiper();
         let t = this;
@@ -131,23 +129,6 @@ export default {
             t.swiperList2 = res.rows
         });
 
-        // if(navigator.geolocation) {
-        //     navigator.geolocation.getCurrentPosition(
-        //         function (position) {
-        //             var longitude = position.coords.longitude;
-        //             var latitude = position.coords.latitude;
-        //             console.log(longitude)
-        //             console.log(latitude)
-        //         },
-        //         function (e) {
-        //             var msg = e.code;
-        //             var dd = e.message;
-        //             console.log(msg)
-        //             console.log(dd)
-        //         }
-        //     )
-        // }
-
         var map = new BMap.Map("div1");
         var point = new BMap.Point(this.longitude, this.latitude);
         map.centerAndZoom(point, 12);
@@ -161,6 +142,8 @@ export default {
             t.province = addComp.province;
 
             ajax.ajaxs('/sys/user/mySelfGpsMapPhone', {province: t.province}, 'GET').then(function (rs) {
+
+
                 var addlist = [];
                 for (let ii = 0; ii < rs.length; ii++) {
                     rs[ii].liveAddress = rs[ii].province + rs[ii].city + rs[ii].district + rs[ii].liveAddress;
@@ -172,9 +155,10 @@ export default {
                     setTimeout(window.bdGEO, 400);
                     geoc.getPoint(t.adds[jj],function (point) {
                         if(point){
-                            var address=new BMap.Point(point.lng,point.lat)
-                            var marker = new BMap.Marker(address);
+                            var Point=new BMap.Point(point.lng,point.lat)
+                            var marker = new BMap.Marker(Point,1);
                             console.log(marker);
+                            // 描绘点
                             map.addOverlay(marker);
                         }
                     })
